@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.link{
+    @apply hidden;
+}
+
+.toggle span,.toggle>div ,.toggle a,.toggle li.block{
+    @apply flex;
+    
+}
+.toggle a{
+    @apply hover:bg-gray-500;
+}
+
+aside:not(.toggle) a{
+    @apply hover:scale-150;
+}
+
+.toggle a:hover{
+    @apply ps-1;
+    @apply ms-2;
+    @apply py-2;
+   
+}
+
