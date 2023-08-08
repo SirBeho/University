@@ -1,4 +1,4 @@
-document.querySelectorAll("label").forEach((labell) => {
+document.querySelectorAll("#inscribirForm label").forEach((labell) => {
     labell.addEventListener("click", (event) => {
       const checkbox = labell.querySelector("input");
       console.log(event);

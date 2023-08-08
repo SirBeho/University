@@ -59,7 +59,7 @@ function delaySubmitForm(event) {
 
 
 
-    function abrirModal(id) {
+    function EditarPermisos(id) {
         // Realizar una solicitud AJAX
         const xhr = new XMLHttpRequest();
     
@@ -81,6 +81,32 @@ function delaySubmitForm(event) {
                     modal.status.checked = (userData.data.us_status == 1);
 
 
+                }
+            }
+        };
+    }
+    
+    function EditarMaestros(id,m_id,m_nombre) {
+        // Realizar una solicitud AJAX
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open("GET", "../model/maestros.php?id=" + id, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const userData = JSON.parse(xhr.responseText);
+                if (userData.error) {
+                    console.error(userData.error);
+                } else {
+                      
+                    const modal = document.getElementById("modalmaestro");
+                    modal.email.value= userData.data.us_email;
+                    modal.nombre.value= userData.data.us_name;
+                    modal.apellido.value= userData.data.us_lastname;
+                    modal.addres.value= userData.data.us_addres;
+                    modal.born.value= userData.data.us_birth;
+                    
                 }
             }
         };

@@ -27,7 +27,7 @@ if (!empty($_GET['id'])) {
                     <td><?php echo $datos['us_email']; ?></td>
                     <td><?php echo  EtiquetaPermiso($datos['us_permiso']); ?></td>
                     <td><?php echo  EtiquetaEstado($datos['us_status']); ?></td>
-                    <td><img onclick="abrirModal(<?php echo $datos['us_id']; ?>)" data-modal-target="permiso-modal" data-modal-toggle="permiso-modal" src="../svg/edit.svg" alt=""></td>
+                    <td><img onclick="EditarPermisos(<?php echo $datos['us_id']; ?>)" data-modal-target="permiso-modal" data-modal-toggle="permiso-modal" src="../svg/edit.svg" alt=""></td>
                 </tr>
 <?php
             }

@@ -26,12 +26,17 @@ function EtiquetaClaseAsignada($valor)
     } else {
         $output = '<span>';
         
-        $output .= implode(', ', $valor); // Implode array values with a comma
+        if (is_array($valor)) {
+            $output .= implode(', ', $valor); // Implode array values with a comma
+        } else {
+            $output .= $valor; // Use the value directly if it's not an array
+        }
         
         $output .= '</span>';
         return $output;
     }
 }
+
 
 function EtiquetaMensaje($valor)
 {
