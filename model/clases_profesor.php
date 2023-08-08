@@ -15,11 +15,9 @@ if ($resultado) {
                 </div>
                 <span class="font-bold "> <?php echo $datos['ma_nombre']; ?></span>
                 <span>Alumnos: <?php echo  EtiquetaCantiodadAlumno($datos['cantidad']); ?></span>
-                <a href="./alumnos_m.php"><img class="bg-blue-200 rounded-md p-1 w-16 h-6 " src="../svg/eyes.svg" alt=""></a>
+                <a href="./alumnos_m.php?id=<?php echo $datos['ma_id']; ?>"><img class="bg-blue-200 rounded-md p-1 w-16 h-6 " src="../svg/eyes.svg" alt=""></a>
 
             </div>
-
-
         <?php
         }
     } else {

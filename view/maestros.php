@@ -5,9 +5,7 @@
         $(document).ready(function() {
             $('#table_maestro').DataTable();
         });
-        $(document).ready(function() {
-            $('#table_maestro2').DataTable();
-        });
+        
     </script>
 
     <div class=" flex justify-between my-4">

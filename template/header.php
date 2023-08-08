@@ -1,9 +1,6 @@
 <?php
 session_start();
 
-// require("../controller/conection.php");
-
-
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../index.php");
     die();
@@ -68,12 +65,7 @@ include ("../functions/etiquetas.php");
                             <span>My Profile</span>
                         </a>
 
-                        <a href="" class="flex items-center gap-2 p-2 mb-2 hover:bg-gray-100 rounded-xl cursor-pointer">
-                            <div class="w-5">
-                                <img src="../svg/groupchat.svg" alt="">
-                            </div>
-                            <span>Group chat</span>
-                        </a>
+                        
                     </div>
 
                     <a href="../controller/logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">

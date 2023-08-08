@@ -2,8 +2,6 @@
 include '../template/header.php';
 
 
-var_dump($_SESSION['usuario']);
-
 ?>
 
 <main class="h-full flex flex-col  bg-gray-100 px-3"> 

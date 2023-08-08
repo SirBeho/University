@@ -1,4 +1,15 @@
-<?php include '../template/header.php' ?>
+<?php include '../template/header.php';
+ob_start();
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php");
+    die();
+}
+if (!isset($_SESSION['materias_ids']) || !in_array($_GET['id'], $_SESSION['materias_ids'])) {
+    header("Location: ./clases_m.php");
+    die();
+}
+ob_end_flush();
+?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
     <script>
@@ -6,8 +17,6 @@
             $('#table_alumno').DataTable();
         });
     </script>
-
-
 
     <div class=" flex justify-between my-4">
         <h1 class="text-2xl">Alumnos de la clase de Matematica</h1>
@@ -18,9 +27,6 @@
         <div class="flex justify-between items-center border-b p-2">
             <span class="block ">Lista de Alumnos</span>
          </div>
-
-
-
 
 
         <div class="p-4">
