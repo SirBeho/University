@@ -1,9 +1,16 @@
 <?php
 session_start();
 
+// require("../controller/conection.php");
 
-require("../controller/conection.php");
-include "../functions/etiquetas.php"
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php");
+    die();
+}
+extract($_SESSION['usuario']);
+
+include ("../functions/etiquetas.php");
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +37,7 @@ include "../functions/etiquetas.php"
 
     <div class="flex h-screen w-screen">
         <?php
-        include '../model/Slidebar.php' ?>
+        include '../template/Slidebar.php' ?>
         <div class="flex flex-col w-full h-full ">
             <nav class="flex justify-between px-4 min-h-[3rem] bg-white relative">
 
@@ -69,7 +76,7 @@ include "../functions/etiquetas.php"
                         </a>
                     </div>
 
-                    <a href="../php/logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
+                    <a href="../controller/logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
                         <div class="w-5">
                             <img src="../svg/logout.svg" alt="">
                         </div>

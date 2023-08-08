@@ -1,3 +1,6 @@
+
+
+
 <!-- Main modal -->
 <div id="permiso-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50  w-full p-4 overflow-x-hidden  overflow-y-auto hidden md:inset-0 h-[98%] max-h-full">
     <!-- cuadro -->
@@ -10,47 +13,36 @@
             </svg>
         </button>
 
-
-
-
-
-
         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Editar Permisos</h3>
 
-        <form action="../php/password.php" id="passwordForm" method="post" class="space-y-6 relative" action="#">
+        <form action="../controller/permisos.php" id="modalpermiso" method="post" class="space-y-6 relative" action="#">
+
+            <input type="hidden" name="id" >
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Email del Usuario
                 <input type="email" name="email" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="ingrese el emain" required>
             </label>
 
-
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Rol del usuario
-                <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"   name="rol"  placeholder="Marca">
+                <select name="permiso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"     placeholder="Acceso">
                     <option value="" disabled selected>Marca</option>
-                    <option value="1" <?php echo ($rol === '1') ? 'selected' : ''; ?>>Admin</option>
-                    <option value="2" <?php echo ($rol === '2') ? 'selected' : ''; ?>>Maestro</option>
+                    <option value="1" >Admin</option>
+                    <option value="2" >Maestro</option>
                     <option value="3" <?php echo ($rol === '3') ? 'selected' : ''; ?>>Usuario</option>
-                    <!-- Agregar otras marcas aquí -->
                 </select>
             </label>
 
-        
             <label class=" inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" class="sr-only peer">
-                <div class=" relative w-11 h-5 bg-green-600 peer-checked:bg-red-600 rounded-full peer after:bg-white  after:absolute after:top-[2px] after:left-[2px] after:rounded-full after:h-4 after:w-4 after:transition-all after:duration-300 peer-checked:after:translate-x-6"></div>
+                <input type="checkbox" name="status" value="1" class="sr-only peer">
+                <div class=" relative w-11 h-5 bg-red-600 peer-checked:bg-green-600 rounded-full peer after:bg-white  after:absolute after:top-[2px] after:left-[2px] after:rounded-full after:h-4 after:w-4 after:transition-all after:duration-300 peer-checked:after:translate-x-6"></div>
                 <span class="hidden ml-3 text-sm font-semibold text-gray-900 peer peer-checked:block">Usuario Activo</span>
                 <span class=" ml-3 text-sm font-semibold text-gray-900 peer peer-checked:hidden">Usuario Inactivo</span>
-
             </label>
-
-
 
             <div id="btn_modal" class="flex justify-end gap-2 mt-2">
                 <button type="button" data-modal-hide="permiso-modal" class="w-fit text-white bg-gray-600 hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Close</button>
                 <button type="submit" class="w-fit   text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar cambios</button>
             </div>
         </form>
-
-
     </div>
 </div>

@@ -1,4 +1,11 @@
-<?php include '../model/header.php' ?>
+<?php 
+include '../template/header.php';
+
+
+var_dump($_SESSION['usuario']);
+
+?>
+
 <main class="h-full flex flex-col  bg-gray-100 px-3"> 
     
     <div class="w-full flex justify-between my-4">
@@ -16,4 +23,4 @@
 </main>
 
 
-<?php include '../model/footer.php' ?>
+<?php include '../template/footer.php' ?>

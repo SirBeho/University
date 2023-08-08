@@ -33,7 +33,7 @@ function Msj(){
         }, 1); 
         setTimeout(() => { 
             msj.remove();
-        }, 5000); 
+        }, 500000); 
     }
 }
 Msj() ;
@@ -56,3 +56,33 @@ function delaySubmitForm(event) {
     document.body.appendChild(loadingScreen);
 
 }
+
+
+
+    function abrirModal(id) {
+        // Realizar una solicitud AJAX
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open("GET", "../model/permisos.php?id=" + id, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const userData = JSON.parse(xhr.responseText);
+                if (userData.error) {
+                    console.error(userData.error);
+                } else {
+                    console.log(userData.data.us_status == 1);
+    
+                    const modal = document.getElementById("modalpermiso");
+                    modal.id.value= userData.data.us_id;
+                    modal.email.value= userData.data.us_email;
+                    modal.permiso.value= userData.data.us_permiso;
+                    modal.status.checked = (userData.data.us_status == 1);
+
+
+                }
+            }
+        };
+    }
+    

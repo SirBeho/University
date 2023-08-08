@@ -1,4 +1,4 @@
-<?php include '../model/header.php' ?>
+<?php include '../template/header.php' ?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
     <script>
@@ -111,5 +111,5 @@
 
 </main>
 
-<?php include  '../model/modalRetirar.php' ?>
-<?php include '../model/footer.php' ?>
+<?php include  '../layout/modalRetirar.php' ?>
+<?php include '../template/footer.php' ?>

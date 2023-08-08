@@ -9,7 +9,6 @@
 
 .toggle span,.toggle>div ,.toggle a,.toggle li.block{
     @apply flex;
-    
 }
 .toggle a{
     @apply hover:bg-gray-500;
@@ -23,6 +22,5 @@ aside:not(.toggle) a{
     @apply ps-1;
     @apply ms-2;
     @apply py-2;
-   
 }
 

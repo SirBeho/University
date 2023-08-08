@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <!-- Incluir archivo de Js y estilos CSS -->
+    
     <script src="./js/funciones.js"  defer></script>
     <link href="./css/output.css" rel="stylesheet">
     <title>Login</title>
@@ -28,18 +28,18 @@ background: linear-gradient(0deg, rgba(8,0,139,1) 0%, rgba(0,212,255,1) 100%);
             <h3 class="font-semibold text-xl leading-snug text-center mb-4 px-12">Bienvenido</h3>
 
             <!-- Formulario de inicio de sesión -->
-            <form action="./php/login.php" method="post" class=" flex flex-col gap-4 px-12 pb-8 relative text-gray-500">
+            <form action="./controller/login.php" method="post" class=" flex flex-col gap-4 px-12 pb-8 relative text-gray-500">
                           
                 <!-- Campo para el correo electrónico -->
-                <div class="flex items-center bg-white gap-3 border border-gray-BD rounded-lg p-3 ps-4">
+                <label class="flex items-center bg-white gap-3 border-2 border-gray-BD rounded-lg p-3 ps-4 focus-within:border-blue-300">
                     <div class="w-4" ><img  src="./svg/email.svg" alt="logo"></div>
                     <input  class="outline-none w-full " type="email" name="email" autocomplete="off" placeholder="Email" value="<?php echo isset($_SESSION['login_email']) ? ($_SESSION['login_email']  ): ''; unset($_SESSION['login_email']); ?>" required>
-                </div>
+                </label>
                 <!-- Campo para la contraseña -->
-                <div class="flex items-center bg-white  gap-3 border border-gray-BD rounded-lg p-3 ps-4">
+                <label class="flex items-center bg-white gap-3 border-2 border-gray-BD rounded-lg p-3 ps-4 focus-within:border-blue-300">
                     <div class="w-4"><img src="./svg/password.svg" alt="logo"></div>
                     <input class="outline-none w-full" type="password" name="password" autocomplete="off" placeholder="Password" required >
-                </div>
+                </label>
       
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
@@ -50,7 +50,7 @@ background: linear-gradient(0deg, rgba(8,0,139,1) 0%, rgba(0,212,255,1) 100%);
                 ?>
 
                 <!-- Botón para enviar el formulario -->
-                <button class="w-full p-2 mt-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white" type="submit">Ingresar</button>
+                <button class="w-full p-2 mt-2 bg-blue-500 rounded-lg text-sm leading-normal font-semibold text-white hover:bg-blue-700" type="submit">Ingresar</button>
             </form>
             
 

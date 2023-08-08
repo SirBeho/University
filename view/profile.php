@@ -1,4 +1,4 @@
-<?php include '../model/header.php' ?>
+<?php include '../template/header.php' ?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
     <script>
@@ -64,6 +64,6 @@
     ?>
 </main>
 
-<?php include  '../model/modalPassword.php' ?>
+<?php include  '../layout/modalPassword.php' ?>
 
-<?php include '../model/footer.php' ?>
+<?php include '../template/footer.php' ?>
