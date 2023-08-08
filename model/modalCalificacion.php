@@ -20,11 +20,11 @@
     <input type="text" name="nombre" autocomplete="off" placeholder="Ingrese el nombre" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
 </label>
 <label class="block text-sm font-medium text-gray-900 dark:text-white">Calificacion
-    <input type="number" name="calificacion" autocomplete="off" placeholder="Ingrese el apellido"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
+    <input type="number" name="calificacion" autocomplete="off" min="0" max="100" placeholder="Ingrese la calificaicon"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >
 </label>
 <label class="block text-sm font-medium text-gray-900 dark:text-white">Mensaje
      
-<textarea name="mensaje"  cols="30" rows="10" placeholder="Ingrese el comentario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></textarea>
+<textarea name="mensaje"  cols="30" rows="5" placeholder="Ingrese el comentario" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"></textarea>
 
 
 </label>

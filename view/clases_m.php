@@ -25,7 +25,7 @@
                 </div>
                 <span class="font-bold "> Matematicas</span>
                 <span class="">Alumnos: 25</span>
-                <a href="#"><img class="bg-blue-200 rounded-md p-1 w-16 h-6 " src="../svg/eyes.svg" alt=""></a>
+                <a href="./alumnos_m.php"><img class="bg-blue-200 rounded-md p-1 w-16 h-6 " src="../svg/eyes.svg" alt=""></a>
             
             </div>
             <div class=" flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">

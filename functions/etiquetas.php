@@ -35,8 +35,8 @@ function EtiquetaClaseAsignada($valor)
 
 function EtiquetaMensaje($valor)
 {
-    return $valor ? '<span class="font-bold rounded h-fit px-1 bg-blue-500 text-white">No hay menaje</span>'
-                  : '<span>'.$valor.'</span>';
+    return $valor  ? '<span>'.$valor.'</span>'
+    :  '<span class="font-bold rounded h-fit px-1 bg-blue-500 text-white">No hay menaje</span>';
 }
 
 

@@ -17,8 +17,7 @@
     <div class="w-full bg-white rounded-md">
         <div class="flex justify-between items-center border-b p-2">
             <span class="block ">Lista de Alumnos</span>
-            <button data-modal-target="alumno-modal" data-modal-toggle="alumno-modal" type="submit" class="w-fit    text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar Alumno</button>
-        </div>
+         </div>
 
 
 
@@ -44,14 +43,23 @@
                         <td>System Architect</td>
                         <td>Edinburgh</td>
                         <td>61</td>
-                        <td>hola</td>
+                        <td><?php echo EtiquetaMensaje("Te fue bien") ?></td>
                         <td>
-                           
-                                <div>
-                                    <img data-modal-target="alumno-modal" data-modal-toggle="alumno-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
-                                </div>
                                
-                          
+                         <img data-modal-target="calificacion-modal" data-modal-toggle="calificacion-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td><?php echo EtiquetaMensaje("") ?></td>
+                        <td>
+                               
+                         <img data-modal-target="calificacion-modal" data-modal-toggle="calificacion-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
+                            
                         </td>
                     </tr>
                    

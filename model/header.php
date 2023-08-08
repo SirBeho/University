@@ -17,7 +17,7 @@ include "../functions/etiquetas.php"
     <link href="../css/output.css" rel="stylesheet">
     <script src="../js/menu.js" defer></script>
     <script src="../js/funciones.js" defer></script>
-    
+
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -27,25 +27,25 @@ include "../functions/etiquetas.php"
 </head>
 
 <body>
-   
+
     <div class="flex h-screen w-screen">
-        <?php 
+        <?php
         include '../model/Slidebar.php' ?>
         <div class="flex flex-col w-full h-full ">
             <nav class="flex justify-between px-4 min-h-[3rem] bg-white relative">
 
                 <div class=" flex gap-5 items-center ">
-                    <img  id="toggle" class="cursor-pointer" src="../svg/bars.svg" alt="" srcset="">
+                    <img id="toggle" class="cursor-pointer" src="../svg/bars.svg" alt="" srcset="">
                     <a href="./dashboard.php" class="flex">
                         <h1 class=" mr-2">HOME </h1>
-                        
-                        <img  src="../svg/home.svg" alt="" srcset="">
-                        
-</a>
+
+                        <img src="../svg/home.svg" alt="" srcset="">
+
+                    </a>
                 </div>
-               
+
                 <div id="control-menu" class="flex items-center gap-2 cursor-pointer">
-                   
+
                     <span class="hidden sx:block font-semibold text-xs leading-snug">beenjamin</span>
                     <div class="hidden sx:block w-4 transform transition-transform duration-500 ">
                         <img src="../svg/arrow.svg" alt="logo" />
