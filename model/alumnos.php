@@ -16,24 +16,24 @@ if (!empty($_GET['id'])) {
 } else {
 
 
-    $resultado = $mysqli->query("SELECT * from vista_profesor_materia");
+    $resultado = $mysqli->query("SELECT * from usuario where us_permiso = '3'");
 
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
-
 ?>
   <tr>
                         <td><?php echo $datos['us_id']; ?></td>
+                        <td><?php echo $datos['us_dni']; ?></td>
                         <td><?php echo $datos['us_name']; ?></td>
                         <td><?php echo $datos['us_email']; ?></td>
                         <td><?php echo $datos['us_addres']; ?></td>
                         <td><?php echo $datos['us_birth']; ?></td>
-                        <td><?php echo EtiquetaClaseAsignada($datos['materias']) ?></td>
                         <td>
                              <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
                                 <div>
-                                    <img onclick="EditarMaestros(<?php echo $datos['us_id']; ?>, '<?php echo $datos['materia_id']; ?>','<?php echo $datos['materias']; ?>')" data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
+                                    <img class="cursor-pointer" src="../svg/edit.svg" alt="">
+                                    
                                 </div>
                                 <!-- <div>
                                     <img src="../svg/trash.svg" class="cursor-pointer" alt="">

@@ -6,7 +6,21 @@
         <span class="link ">Universidad</span>
     </div>
     <div class="flex flex-col gap-2 p-4 border-b-[0.1px] link">
-        <span class=""><?php echo $us_permiso ?></span>
+        <span class=""><?php
+                        switch ($us_permiso) {
+                            case 1:
+                                echo "Administrador";
+                                break;
+                            case 2:
+                                echo 'Maestro';
+                                break;
+                            case 3:
+                                echo 'Alumno<';
+                                break;
+                            default:
+                                echo 'Desconocido';
+                        }
+                        ?></span>
         <span class=""><?php echo $us_name . " " . $us_lastname ?></span>
     </div>
 
@@ -39,13 +53,13 @@
 
             <li class="hover:bg-white">
 
-            <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases.php">
-                <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
-                <span class="hidden">Clases</span>
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases.php">
+                    <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
+                    <span class="hidden">Clases</span>
 
-            </a>
-        </li>
-        
+                </a>
+            </li>
+
         <?php endif; ?>
 
         <li class="hover:bg-white">
@@ -57,10 +71,10 @@
             </a>
         </li>
 
-        
 
 
 
+        <?php if ($us_permiso == 2) : ?>
         <li class="hover:bg-white flex">
             <a class="flex w-full gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_m.php">
                 <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
@@ -84,5 +98,6 @@
             </li>
 
         </ul>
+        <?php endif; ?>
     </ul>
 </aside>

@@ -1,4 +1,6 @@
-<?php include '../template/header.php' ?>
+<?php include '../template/header.php'
+
+?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
     <script>
@@ -16,44 +18,10 @@
 
     
         
-        <div class="flex flex-wrap gap-4 mt-4 w-full"> <!-- //while -->
+    <div class="flex flex-wrap gap-4 mt-4 w-full"> <!-- //while -->
 
 
-            <div class=" flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">
-                <div class="w-full rounded-md overflow-hidden  bg-blue-200">
-                    <img class="w-full h-full" src="../svg/school.svg" alt="">
-                </div>
-                <span class="font-bold "> Matematicas</span>
-                <span class="">Alumnos: 25</span>
-                <a href="./alumnos_m.php"><img class="bg-blue-200 rounded-md p-1 w-16 h-6 " src="../svg/eyes.svg" alt=""></a>
-            
-            </div>
-            <div class=" flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">
-                <div class="w-full rounded-md overflow-hidden  bg-blue-200">
-                    <img class="w-full h-full" src="../svg/school.svg" alt="">
-                </div>
-                <span class="font-bold "> Matematicas</span>
-                <span class="">Alumnos: 25</span>
-                <img class="bg-blue-200 rounded-md p-1 w-16 h-6" src="../svg/eyes.svg" alt="">
-
-            </div>
-            <div class=" flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">
-                <div class="w-full rounded-md overflow-hidden  bg-blue-200">
-                    <img class="w-full h-full" src="../svg/school.svg" alt="">
-                </div>
-                <span class="font-bold "> Matematicas</span>
-                <span class="">Alumnos: 25</span>
-                <img class="bg-blue-200 rounded-md p-1 w-16 h-6" src="../svg/eyes.svg" alt="">
-
-            </div>
-
-
-
-
-      
-
-
-
+    <?php include "../model/clases_profesor.php" ?>
 
 
     </div>

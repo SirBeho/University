@@ -33,7 +33,7 @@ function Msj(){
         }, 1); 
         setTimeout(() => { 
             msj.remove();
-        }, 500000); 
+        }, 5000); 
     }
 }
 Msj() ;
@@ -50,15 +50,10 @@ function delaySubmitForm(event) {
     loadingScreen.style.left = '0';
     loadingScreen.style.width = '100vw';
     loadingScreen.style.height = '100vh';
-    
-
     loadingScreen.style.background = '#8c8be673';
     document.body.appendChild(loadingScreen);
 
 }
-
-
-
     function EditarPermisos(id) {
         // Realizar una solicitud AJAX
         const xhr = new XMLHttpRequest();
@@ -86,11 +81,53 @@ function delaySubmitForm(event) {
         };
     }
     
-    function EditarMaestros(id,m_id,m_nombre) {
+    function EditarMaestros(id, m_id, m_nombre) {
         // Realizar una solicitud AJAX
         const xhr = new XMLHttpRequest();
     
         xhr.open("GET", "../model/maestros.php?id=" + id, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const userData = JSON.parse(xhr.responseText);
+                if (userData.error) {
+                    console.error(userData.error);
+                } else {
+    
+                    const modal = document.getElementById("modalmaestro");
+                    modal.id.value = userData.data.us_id;
+                    modal.email.value = userData.data.us_email;
+                    modal.name.value = userData.data.us_name;
+                    modal.lastname.value = userData.data.us_lastname;
+                    modal.addres.value = userData.data.us_addres;
+                    modal.born.value = userData.data.us_birth;
+            
+
+                    const materiasContainer = document.getElementById("materias");
+                    let labels = "";
+                    const materias_Array = m_nombre.split(', ');
+                    const materias_id_Array = m_id.split(', ');
+    
+                    materias_Array.forEach((elemento, index) => {
+                        labels += `<label>
+                            <input checked type="checkbox" name="item[]" value="${materias_id_Array[index]}" class="" c>${elemento}
+                        </label>`;
+                    });
+    
+                    materiasContainer.innerHTML = labels;
+                }
+            }
+        };
+    }
+
+
+
+    function EditarClases(id) {
+        // Realizar una solicitud AJAX
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open("GET", "../model/clases.php?id=" + id, true);
         xhr.send();
     
         xhr.onreadystatechange = function() {
@@ -99,16 +136,17 @@ function delaySubmitForm(event) {
                 if (userData.error) {
                     console.error(userData.error);
                 } else {
-                      
-                    const modal = document.getElementById("modalmaestro");
-                    modal.email.value= userData.data.us_email;
-                    modal.nombre.value= userData.data.us_name;
-                    modal.apellido.value= userData.data.us_lastname;
-                    modal.addres.value= userData.data.us_addres;
-                    modal.born.value= userData.data.us_birth;
                     
+    
+                    const modal = document.getElementById("modalclase");
+                    modal.id.value= userData.data.ma_id;
+                    modal.nombre.value= userData.data.ma_nombre;
+                    modal.profesor.value= userData.data.ma_profesor;
+                   
                 }
             }
         };
     }
+    
+    
     

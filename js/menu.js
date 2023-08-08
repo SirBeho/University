@@ -5,7 +5,7 @@ document.querySelectorAll("#inscribirForm label").forEach((labell) => {
       console.log(checkbox);
   
       if (!(event.ctrlKey || event.metaKey)) {
-        document.querySelectorAll("input").forEach((otherCheckbox) => {
+        document.querySelectorAll("#inscribirForm input").forEach((otherCheckbox) => {
           if (otherCheckbox !== checkbox) {
             otherCheckbox.checked = false;
           }

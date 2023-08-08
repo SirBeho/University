@@ -44,6 +44,22 @@ function EtiquetaMensaje($valor)
     :  '<span class="font-bold rounded h-fit px-1 bg-blue-500 text-white">No hay menaje</span>';
 }
 
+function EtiquetaProfesorAsignado($valor)
+{
+    if ($valor == null || $valor == "") {
+        return '<span class="font-bold rounded h-fit px-1 bg-yellow-400 text-black">Sin Asignación</span>';
+    } else {
+        return $valor;
+    }
+}
+function EtiquetaCantiodadAlumno($valor)
+{
+    if ($valor == null || $valor == "" || $valor == 0) {
+        return '<span class="font-bold rounded h-fit px-1 bg-yellow-400 text-black">Sin Alumnos</span>';
+    } else {
+        return $valor;
+    }
+}
 
 
 ?>

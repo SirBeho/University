@@ -12,18 +12,29 @@
 
         <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Clase</h3>
 
-        <form action="../controller/maestro_register.php" id="claseForm" method="post" class="space-y-6 relative" action="#">
+        <form action="../controller/clase.php" id="modalclase" method="post" class="space-y-6 relative" action="#">
+            
+            <input type="hidden" name="id">
+
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Nombre de la materia
                 <input type="text" name="nombre" autocomplete="off" placeholder="Ingrese el nombre" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </label>
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Maestros disponibles para la Clase
-                <select name="clase" placeholder="Sin Asignar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                    <option value="" disabled selected>Sin Asignar</option>
-                    <option value="1" <?php echo ($rol === '1') ? 'selected' : ''; ?>>Admin</option>
-                    <option value="2" <?php echo ($rol === '2') ? 'selected' : ''; ?>>Maestro</option>
-                    <option value="3" <?php echo ($rol === '3') ? 'selected' : ''; ?>>Usuario</option>
+                <select name="profesor" placeholder="Sin Asignar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                    <option value='' disabled>Profesor</option>
+                    <?php
+                    require_once("../controller/conection.php");
+                    $resultado = $mysqli->query("SELECT * from usuario where us_permiso ='2'");
 
+                    if ($resultado) {
+                        if ($resultado->num_rows > 0) {
+                            while ($datos = $resultado->fetch_assoc()) {
+                                echo "<option value='" . $datos['us_id'] . "'>" . $datos['us_name'] . " " . $datos['us_lastname'] . "</option>";
+                            }
+                        }
+                    }
+                    ?>
                 </select>
             </label>
 
