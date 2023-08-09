@@ -73,7 +73,7 @@
             </li>
             <ul data-collapse-toggle="lista_clases" id="lista_clases" class="hidden bg-gray-500 ps-2 border-y overflow-hidden  border-y-gray-500">
 
-                <?php include "../model/clases_profesor_slider.php" ?>
+                <?php include "../model/R_clases_profesor_slider.php" ?>
             </ul>
         <?php endif; ?>
         <?php if ($us_permiso == 3) : ?>

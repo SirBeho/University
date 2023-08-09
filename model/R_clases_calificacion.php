@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/conection.php");
+require_once("../controller/connection.php");
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];

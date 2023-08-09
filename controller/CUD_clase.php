@@ -3,7 +3,7 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
-    require("./conection.php");
+    require("./connection.php");
     extract($_POST);
 
 
@@ -13,10 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $_SESSION['success_message'] = "Datos actualizados correctamente";
     } else {
-
-      
-         $_SESSION['error_message'] = $mysqli->error;
-        
+         $_SESSION['error_message'] = $mysqli->error; 
     }
 
     header("Location: ../view/clases.php");

@@ -42,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include "../model/permisos.php" ?>
+                    <?php include "../model/R_permisos.php" ?>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -60,4 +60,5 @@
 </main>
 
 <?php include  '../layout/modalPermiso.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

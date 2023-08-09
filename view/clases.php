@@ -50,7 +50,7 @@
                 </thead>
                 <tbody>
 
-                    <?php include "../model/clases.php" ?>
+                    <?php include "../model/R_clases.php" ?>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -70,4 +70,5 @@
 </main>
 
 <?php include  '../layout/modalClase.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

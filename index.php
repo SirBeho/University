@@ -28,7 +28,7 @@
             <h3 class="font-semibold text-xl leading-snug text-center mb-4 px-12">Bienvenido</h3>
 
             <!-- Formulario de inicio de sesión -->
-            <form action="./controller/login.php" method="post" class=" flex flex-col gap-4 px-12 pb-8 relative text-gray-500">
+            <form action="./controller/CUD_login.php" method="post" class=" flex flex-col gap-4 px-12 pb-8 relative text-gray-500">
 
                 <!-- Campo para el correo electrónico -->
                 <label class="flex items-center bg-white gap-3 border-2 border-gray-BD rounded-lg p-3 ps-4 focus-within:border-blue-300">

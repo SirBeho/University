@@ -21,4 +21,5 @@ include '../template/header.php';
 </main>
 
 
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

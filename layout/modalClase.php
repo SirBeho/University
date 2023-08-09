@@ -12,7 +12,7 @@
 
         <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Clase</h3>
 
-        <form action="../controller/clase.php" id="modalclase" method="post" class="space-y-6 relative" action="#">
+        <form action="../controller/CUD_clase.php" id="modalclase" method="post" class="space-y-6 relative" action="#">
             
             <input type="hidden" name="id">
 
@@ -24,7 +24,7 @@
                 <select name="profesor" placeholder="Sin Asignar" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                     <option value='' disabled>Profesor</option>
                     <?php
-                    require_once("../controller/conection.php");
+                    require_once("../controller/connection.php");
                     $resultado = $mysqli->query("SELECT * from usuario where us_permiso ='2'");
 
                     if ($resultado) {

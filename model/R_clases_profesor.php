@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/conection.php");
+require_once("../controller/connection.php");
 
 $id_usuario = $_SESSION['usuario']['us_id'];
 

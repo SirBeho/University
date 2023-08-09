@@ -48,7 +48,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php include "../model/alumnos.php" ?>
+                <?php include "../model/R_alumnos.php" ?>
                    
             </tbody>
                 <tfoot>
@@ -75,4 +75,5 @@
 </main>
 
 <?php include  '../layout/modalAlumno.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

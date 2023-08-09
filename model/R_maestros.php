@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/conection.php");
+require_once("../controller/connection.php");
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
@@ -15,12 +15,21 @@ if (!empty($_GET['id'])) {
     echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
 } else {
 
-
+   
     $resultado = $mysqli->query("SELECT * from vista_profesor_materia");
-
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
+                $id = $datos['us_id'];
+                $nombre = $datos['us_name'];
+                $eliminar = array(
+                    'controller' => "CUD_maestro.php",
+                    'accion' => "delete",
+                    'query' => "DELETE FROM usuario WHERE us_usuario = $id",
+                    'msj' =>  "Eliminar a $nombre"
+                );  
+                
+                
 
 ?>
   <tr>
@@ -35,9 +44,10 @@ if (!empty($_GET['id'])) {
                                 <div>
                                     <img onclick="EditarMaestros(<?php echo $datos['us_id']; ?>, '<?php echo $datos['materia_id']; ?>','<?php echo $datos['materias']; ?>')" data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
                                 </div>
-                                <!-- <div>
-                                    <img src="../svg/trash.svg" class="cursor-pointer" alt="">
-                                </div> -->
+                                <div>
+                                    <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" src="../svg/trash.svg" class="cursor-pointer" alt="">
+                                </div>
+                                
                             </div>
                         </td>
                     </tr>

@@ -12,7 +12,7 @@
 
         <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Maestro</h3>
 
-        <form action="../controller/maestro_register.php" id="maestroForm" method="post" class="space-y-6 relative" action="#">
+        <form action="../controller/CUD_maestro_register.php" id="maestroForm" method="post" class="space-y-6 relative" action="#">
 
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">DNI

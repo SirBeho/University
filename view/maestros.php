@@ -16,7 +16,7 @@
     <div class="w-full bg-white rounded-md">
         <div class=" flex justify-between items-center border-b p-2 relative">
             <span class="block ">Informacion de Maestros</span>
-            <!-- <button data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" type="submit" class="w-fit    text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar Maestro</button> -->
+            <button data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" type="submit" class="w-fit    text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar Maestro</button>
             <?php
             if (isset($_SESSION['error_message'])) {
                 echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
@@ -46,7 +46,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php include "../model/maestros.php" ?>
+                    <?php include "../model/R_maestros.php" ?>
                 </tbody>
                 <tfoot>
                     <tr>
@@ -68,4 +68,5 @@
 </main>
 
 <?php include  '../layout/modalMaestro.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

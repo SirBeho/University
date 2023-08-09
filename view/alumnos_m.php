@@ -57,7 +57,7 @@ $datos = $resultado->fetch_assoc();
                     </tr>
                 </thead>
                 <tbody>
-                <?php include "../model/clases_calificacion.php" ?>
+                <?php include "../model/R_clases_calificacion.php" ?>
                 
                 </tbody>
                 <tfoot>
@@ -77,4 +77,5 @@ $datos = $resultado->fetch_assoc();
 </main>
 
 <?php include  '../layout/modalCalificacion.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

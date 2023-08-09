@@ -11,7 +11,7 @@
 
         <h3 id="titutlo" class="pb-2 mb-4 border-b-2 text-xl font-medium text-gray-900 dark:text-white px-6 lg:px-8">Retiro de asignaturas</h3>
 
-        <form action="../controller/maestro_register.php" id="modalRetiro" method="post" class="space-y-6 relative px-6 lg:px-8" action="#">
+        <form action="../controller/CUD_maestro_register.php" id="modalRetiro" method="post" class="space-y-6 relative px-6 lg:px-8" action="#">
             <span class="block text-lg font-medium text-gray-900 dark:text-white">
                 Esta seguro que quiere retirar <span class="font-extrabold" class="" id="materia_name"></span> ?
             </span>

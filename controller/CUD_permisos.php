@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     extract($_POST);
 
-    require("./conection.php");
+    require("./connection.php");
 
     $status = isset($_POST["status"]);
 

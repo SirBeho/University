@@ -12,8 +12,8 @@
 
         <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Alumno</h3>
 
-        <form action="../controller/maestro.php" id="modalmaestro" method="post" class="space-y-6 relative" action="#">
-
+        <form action="../controller/CUD_maestro.php" id="modalmaestro" method="post" class="space-y-6 relative" >
+            <input type="hidden" name="accion" value="create">
             <input type="hidden" name="id">
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Email del Usuario
                 <input type="email" name="email" autocomplete="off" placeholder="Ingrese el email" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" >

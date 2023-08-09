@@ -42,14 +42,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                         <?php include "../model/alumno_retiro.php" ?>
+                         <?php include "../model/R_alumno_retiro.php" ?>
                     </tbody>
                 </table>
             </div>
         </div>
         
 <!-- derecha -->
-        <div class="flex flex-col w-1/2  bg-white rounded-md shadow-md">
+        <div class="flex flex-col w-1/2 bg-white rounded-md shadow-md">
             <span class="flex border-b p-2">
                 Materias para inscribir
             </span>
@@ -57,14 +57,18 @@
             <div class="flex flex-col gap-2 m-4">
             <span class="font-bold ">Selecciona las Clases usa la tecla Ctrl</span>
 
-            <form action="./prueva.php" id="inscribirForm" method="post" class="flex flex-col p-4 border rounded-md">
+            <form action="../controller/CUD_register.php" id="inscribirForm" method="post" class=" flex flex-col" >
+                <div class="flex flex-col p-4 border rounded-md">
 
-            <?php include "../model/alumno_inscribir.php" ?>
+                    <?php include "../model/R_alumno_registro.php" ?>
+                </div>
                
-            </form>
-            <button type="submit" class="self-end  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button type="submit" class="self-end  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Inscribir
             </button>
+
+            </form>
+            
             </div>
         </div>
 
@@ -93,4 +97,5 @@
 </main>
 
 <?php include  '../layout/modalRetirar.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

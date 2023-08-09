@@ -1,10 +1,10 @@
 <?php
-require_once("../controller/conection.php");
+require_once("../controller/connection.php");
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
 
-    $resultado = $mysqli->query("select * from usuario where us_id=$id");
+    $resultado = $mysqli->query("select * from materia where ma_id=$id");
 
     $result = $resultado->fetch_assoc();
     if (empty($result)) {
@@ -16,23 +16,21 @@ if (!empty($_GET['id'])) {
 } else {
 
 
-    $resultado = $mysqli->query("SELECT * from usuario where us_permiso = '3'");
+    $resultado = $mysqli->query("SELECT * FROM vista_materia_profe_alumno");
 
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
 ?>
   <tr>
-                        <td><?php echo $datos['us_id']; ?></td>
-                        <td><?php echo $datos['us_dni']; ?></td>
-                        <td><?php echo $datos['us_name']; ?></td>
-                        <td><?php echo $datos['us_email']; ?></td>
-                        <td><?php echo $datos['us_addres']; ?></td>
-                        <td><?php echo $datos['us_birth']; ?></td>
+                        <td><?php echo $datos['ma_id']; ?></td>
+                        <td><?php echo $datos['ma_nombre']; ?></td>
+                        <td><?php echo EtiquetaProfesorAsignado($datos['us_name']) ?></td>
+                        <td><?php echo EtiquetaCantiodadAlumno($datos['cantidad']) ?></td>
                         <td>
                              <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
                                 <div>
-                                    <img class="cursor-pointer" src="../svg/edit.svg" alt="">
+                                    <img onclick="EditarClases(<?php echo $datos['ma_id']; ?>)" data-modal-target="clase-modal" data-modal-toggle="clase-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
                                     
                                 </div>
                                 <!-- <div>

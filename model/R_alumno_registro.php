@@ -1,5 +1,5 @@
 <?php
-require_once("../controller/conection.php");
+require_once("../controller/connection.php");
 
 if (!empty($_GET['id'])) {
     $id = $_GET['id'];
@@ -14,20 +14,21 @@ if (!empty($_GET['id'])) {
     }
     echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
 } else {
+    
     $id_alum = $_SESSION['usuario']['us_id'];
-    $resultado = $mysqli->query("SELECT * FROM vista_materia_calificacion where se_alumno = $id_alum ");
+    $resultado = $mysqli->query("select * from materia LEFT join seleccion ON se_materia = ma_id WHERE ma_id not in (SELECT se_materia FROM seleccion WHERE se_alumno = '$id_alum') ");
+
 
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
     ?>
-        <tr>
-            <td><?php echo $datos['se_id']; ?></td>
-            <td><?php echo $datos['ma_nombre']; ?></td>
-            <td>
-                <img onclick="RetirarMateria(<?php echo $datos['se_id']; ?>)" data-modal-target="retiro-modal" data-modal-toggle="retiro-modal" class="cursor-pointer" src="../svg/retirar.svg" alt="">
-            </td>
-        </tr>
+
+                <label>
+                    <input type="checkbox" name="item[]" value="<?php echo $datos['ma_id']; ?>" class="sr-only peer ">
+                    <span class="block ps-2 peer peer-checked:bg-blue-200"><?php echo $datos['ma_nombre']; ?></span>
+                </label>
+    
     <?php
             }
         }

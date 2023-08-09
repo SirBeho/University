@@ -62,7 +62,7 @@ include ("../functions/etiquetas.php");
                     </div>
 
                     
-                    <a href="../controller/logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
+                    <a href="../controller/CUD_logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
                         <div class="w-6">
                             <img src="../svg/logout.svg" alt="">
                         </div>

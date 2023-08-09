@@ -31,7 +31,7 @@
     <div class="flex flex-wrap gap-4 mt-4 w-full"> <!-- //while -->
 
 
-    <?php include "../model/clases_profesor.php" ?>
+    <?php include "../model/R_clases_profesor.php" ?>
 
 
     </div>
@@ -40,4 +40,5 @@
 </main>
 
 <?php include  '../layout/modalClase.php' ?>
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

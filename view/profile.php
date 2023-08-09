@@ -19,7 +19,7 @@
             <span class="block ">Informacion de Alumnos</span>
         </div>
 
-        <form action="../controller/maestro_register.php" id="maestroForm" method="post" class="space-y-6 relative p-4" action="#">
+        <form action="../controller/CUD_maestro_register.php" id="maestroForm" method="post" class="space-y-6 relative p-4" action="#">
 
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Correo Electronico
@@ -66,4 +66,5 @@
 
 <?php include  '../layout/modalPassword.php' ?>
 
+<?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>
