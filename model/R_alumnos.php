@@ -21,27 +21,33 @@ if (!empty($_GET['id'])) {
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
-?>
-  <tr>
-                        <td><?php echo $datos['us_id']; ?></td>
-                        <td><?php echo $datos['us_dni']; ?></td>
-                        <td><?php echo $datos['us_name']; ?></td>
-                        <td><?php echo $datos['us_email']; ?></td>
-                        <td><?php echo $datos['us_addres']; ?></td>
-                        <td><?php echo $datos['us_birth']; ?></td>
-                        <td>
-                             <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
-                                <div>
-                                    <img class="cursor-pointer" src="../svg/edit.svg" alt="">
-                                </div>
-                                <!-- <div>
-                                    <img src="../svg/trash.svg" class="cursor-pointer" alt="">
-                                </div> -->
+                $img = is_file("../pictures/user_{$datos['us_id']}");
+                $eliminar = array(
+                    'controller' => "CUD_alumno.php",
+                    'id' => $datos['us_id'],
+                    'msj' =>  "Eliminar a " . $datos['us_name']
+                );
+                ?>
+                <tr>
+                    <td><?php echo $datos['us_id']; ?></td>
+                    <td><?php echo $datos['us_dni']; ?></td>
+                    <td><?php echo $datos['us_name']; ?></td>
+                    <td><?php echo $datos['us_email']; ?></td>
+                    <td><?php echo $datos['us_addres']; ?></td>
+                    <td><?php echo $datos['us_birth']; ?></td>
+                    <td>
+                        <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
+                            <div>
+                                <img onclick="EditarAlumnos(<?php echo $datos['us_id']; ?>,<?php echo $img ?>)" data-modal-target="alumno-modal" data-modal-toggle="alumno-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
                             </div>
-                        </td>
-                    </tr>
+                            <div>
+                                <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" src="../svg/trash.svg" class="cursor-pointer" alt="">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
 
-                  
+
 
 <?php
             }

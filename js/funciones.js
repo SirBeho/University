@@ -2,7 +2,7 @@
 function showImg(event) {
   const fileInput = event.target; // Obtener el campo de archivo de entrada
   const imagePreview = document.getElementById("imagePreview"); // Obtener el elemento de vista previa de la imagen
-
+ 
   if (fileInput.files && fileInput.files[0]) {
     // Si se selecciona un archivo
     const reader = new FileReader();
@@ -14,7 +14,12 @@ function showImg(event) {
   } else {
     // Si no se selecciona un archivo, mostrar la imagen predeterminada
     console.log("errors");
-    imagePreview.src = `./pictures/<?php echo is_file("../pictures/photo_".$us_id) ? "photo_".$us_id : "usuario.jpg" ?>`;
+    imagePreview.src = `./pictures/<?php echo is_file("../pictures/user_".$us_id) ? "user_".$us_id : "usuario.jpg" ?>`;
+  }
+
+  if(fileInput.id = "photo_clase"){
+    
+    document.getElementById("photoForm").submit();
   }
 }
 
@@ -36,6 +41,7 @@ function Msj() {
 }
 Msj();
 
+//funciones de Administrador
 function delaySubmitForm(event) {
   console.log(event);
 
@@ -76,7 +82,7 @@ function EditarPermisos(id) {
   };
 }
 
-function EditarMaestros(id, m_id, m_nombre) {
+function EditarMaestros(id, m_id, m_nombre,img) {
   // Realizar una solicitud AJAX
   const xhr = new XMLHttpRequest();
 
@@ -89,6 +95,12 @@ function EditarMaestros(id, m_id, m_nombre) {
       if (userData.error) {
         console.error(userData.error);
       } else {
+
+        
+        document.getElementById("imagemodal").src = "../pictures/" + (img ? "user_" + userData.data.us_id : "usuario.jpg");
+        document.getElementById("titulo").textContent = "Modificar Maestro"
+        
+        
         const modal = document.getElementById("modalmaestro");
         modal.accion.value = "update";
         modal.id.value = userData.data.us_id;
@@ -97,7 +109,7 @@ function EditarMaestros(id, m_id, m_nombre) {
         modal.lastname.value = userData.data.us_lastname;
         modal.addres.value = userData.data.us_addres;
         modal.born.value = userData.data.us_birth;
-
+        
         const materiasContainer = document.getElementById("materias");
         let labels = "";
         const materias_Array = m_nombre.split(", ");
@@ -115,7 +127,38 @@ function EditarMaestros(id, m_id, m_nombre) {
   };
 }
 
-function EditarClases(id) {
+function EditarAlumnos(id, img) {
+  // Realizar una solicitud AJAX
+  const xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "../model/R_alumnos.php?id=" + id, true);
+  xhr.send();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const userData = JSON.parse(xhr.responseText);
+      if (userData.error) {
+        console.error(userData.error);
+      } else {
+
+        document.getElementById("imagemodal").src = "../pictures/" + (img ? "user_" + userData.data.us_id : "usuario.jpg");
+        document.getElementById("titulo").innerText = "Modificar Alumno"
+
+        const modal = document.getElementById("alumnoForm");
+        modal.accion.value = "update";
+        modal.id.value = userData.data.us_id;
+        modal.dni.value = userData.data.us_dni;
+        modal.email.value = userData.data.us_email;
+        modal.name.value = userData.data.us_name;
+        modal.lastname.value = userData.data.us_lastname;
+        modal.addres.value = userData.data.us_addres;
+        modal.birth.value = userData.data.us_birth;
+      }
+    }
+  };
+}
+
+function EditarClases(id,img) {
   // Realizar una solicitud AJAX
   const xhr = new XMLHttpRequest();
 
@@ -128,7 +171,12 @@ function EditarClases(id) {
       if (userData.error) {
         console.error(userData.error);
       } else {
+
+        document.getElementById("imagemodal").src = "../pictures/" + (img ? "clase_" + userData.data.ma_id : "school.svg");
+        document.getElementById("titulo").textContent = "Modificar Clase"
+
         const modal = document.getElementById("modalclase");
+        modal.accion.value = "update";
         modal.id.value = userData.data.ma_id;
         modal.nombre.value = userData.data.ma_nombre;
         modal.profesor.value = userData.data.ma_profesor;
@@ -136,6 +184,7 @@ function EditarClases(id) {
     }
   };
 }
+
 
 function EditarCalificacion(id) {
   const xhr = new XMLHttpRequest();
@@ -183,8 +232,8 @@ function Eliminar(data) {
   console.log(data);
   const formulario = document.getElementById("modalDelete");
   formulario.action = "../controller/" + data.controller; 
-  formulario.accion.value = data.accion; 
-  formulario.query.value = data.query; 
+  formulario.accion.value = "delete"; 
+  formulario.id.value = data.id; 
   document.getElementById("mensaje").textContent = data.msj;
              
 }; 

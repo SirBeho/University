@@ -63,7 +63,7 @@
                     <?php include "../model/R_alumno_registro.php" ?>
                 </div>
                
-                <button type="submit" class="self-end  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <button type="submit" class="self-end mt-2    bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Inscribir
             </button>
 

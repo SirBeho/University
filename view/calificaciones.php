@@ -14,13 +14,13 @@ if (!isset($_SESSION['usuario'])) {
     </script>
 
     <div class=" flex justify-between my-4">
-        <h1 class="text-2xl">Calificaciones de mensajes de tus clases</h1>
+        <h1 class="text-2xl">Calificaciones y mensajes de tus clases</h1>
         <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Mis calificaciones</span></span>
     </div>
 
     <div class="w-full bg-white rounded-md">
         <div class="relative flex justify-between items-center border-b p-2">
-            <span class="block ">Calificaciones de mensajes de tus clases</span>
+            <span class="block ">Calificaciones y mensajes de tus clases</span>
         </div>
 
 

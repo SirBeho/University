@@ -47,7 +47,7 @@ include("../functions/etiquetas.php");
                 <div id="control-menu" class="flex items-center gap-2 cursor-pointer">
                     <div class="h-8 w-8 overflow-hidden rounded-lg">
                         <!-- Mostrar imagen de perfil del usuario o "usuario.jpg" si no está definida -->
-                        <img id="imagePreviewmenu" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_" . $us_id) ? "photo_" . $us_id : "usuario.jpg" ?>" alt="">
+                        <img id="imagePreviewmenu" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/user_" . $us_id) ? "user_" . $us_id : "usuario.jpg" ?>" alt="">
                     </div>
 
 

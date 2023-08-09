@@ -21,6 +21,13 @@ if (!empty($_GET['id'])) {
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
+                $img = is_file("../pictures/clase_{$datos['ma_id']}");
+               
+                $eliminar = array(
+                    'controller' => "CUD_clase.php",
+                    'id' => $datos['ma_id'],
+                    'msj' =>  "Eliminar a " . $datos['ma_nombre']
+                );
 ?>
   <tr>
                         <td><?php echo $datos['ma_id']; ?></td>
@@ -30,12 +37,12 @@ if (!empty($_GET['id'])) {
                         <td>
                              <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
                                 <div>
-                                    <img onclick="EditarClases(<?php echo $datos['ma_id']; ?>)" data-modal-target="clase-modal" data-modal-toggle="clase-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
+                                    <img onclick="EditarClases(<?php echo $datos['ma_id']; ?>,<?php echo $img ?>)" data-modal-target="clase-modal" data-modal-toggle="clase-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
                                     
                                 </div>
-                                <!-- <div>
-                                    <img src="../svg/trash.svg" class="cursor-pointer" alt="">
-                                </div> -->
+                                <div>
+                                    <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" src="../svg/trash.svg" class="cursor-pointer" alt="">
+                                </div>
                             </div>
                         </td>
                     </tr>

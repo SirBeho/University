@@ -10,8 +10,8 @@ if ($resultado) {
         while ($datos = $resultado->fetch_assoc()) {
 ?>
             <div class="flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">
-                <div class="w-full rounded-md overflow-hidden  bg-blue-200">
-                    <img class="w-full h-full" src="../svg/school.svg" alt="">
+                <div class="w-full h-40 rounded-md overflow-hidden  bg-blue-200">
+                    <img class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/clase_" . $datos['ma_id']) ? "clase_" . $datos['ma_id'] : "school.svg" ?>" alt="">
                 </div>
                 <span class="font-bold "> <?php echo $datos['ma_nombre']; ?></span>
                 <span>Alumnos: <?php echo  EtiquetaCantiodadAlumno($datos['cantidad']); ?></span>

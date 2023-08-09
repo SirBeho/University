@@ -15,44 +15,39 @@ if (!empty($_GET['id'])) {
     echo json_encode($respuesta, JSON_UNESCAPED_UNICODE);
 } else {
 
-   
+
     $resultado = $mysqli->query("SELECT * from vista_profesor_materia");
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
-                $id = $datos['us_id'];
-                $nombre = $datos['us_name'];
+                $img = is_file("../pictures/user_{$datos['us_id']}");
                 $eliminar = array(
                     'controller' => "CUD_maestro.php",
-                    'accion' => "delete",
-                    'query' => "DELETE FROM usuario WHERE us_id = $id",
-                    'msj' =>  "Eliminar a $nombre"
-                );  
-                
-                
-
-?>
-  <tr>
-                        <td><?php echo $datos['us_id']; ?></td>
-                        <td><?php echo $datos['us_name']; ?></td>
-                        <td><?php echo $datos['us_email']; ?></td>
-                        <td><?php echo $datos['us_addres']; ?></td>
-                        <td><?php echo $datos['us_birth']; ?></td>
-                        <td><?php echo EtiquetaClaseAsignada($datos['materias']) ?></td>
-                        <td>
-                             <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
-                                <div>
-                                    <img onclick="EditarMaestros(<?php echo $datos['us_id']; ?>, '<?php echo $datos['materia_id']; ?>','<?php echo $datos['materias']; ?>')" data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
-                                </div>
-                                <div>
-                                    <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" src="../svg/trash.svg" class="cursor-pointer" alt="">
-                                </div>
-                                
+                    'id' => $datos['us_id'],
+                    'msj' =>  "Eliminar a " . $datos['us_name']
+                );
+                ?>
+                <tr>
+                    <td><?php echo $datos['us_id']; ?></td>
+                    <td><?php echo $datos['us_name']; ?></td>
+                    <td><?php echo $datos['us_email']; ?></td>
+                    <td><?php echo $datos['us_addres']; ?></td>
+                    <td><?php echo $datos['us_birth']; ?></td>
+                    <td><?php echo EtiquetaClaseAsignada($datos['materias']) ?></td>
+                    <td>
+                        <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
+                            <div>
+                                <img onclick="EditarMaestros(<?php echo $datos['us_id']; ?>, '<?php echo $datos['materia_id']; ?>','<?php echo $datos['materias']; ?>','<?php echo $img ?>',)" data-modal-target="maestro-modal" data-modal-toggle="maestro-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
                             </div>
-                        </td>
-                    </tr>
+                            <div>
+                                <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" src="../svg/trash.svg" class="cursor-pointer" alt="">
+                            </div>
 
-                  
+                        </div>
+                    </td>
+                </tr>
+
+
 
 <?php
             }

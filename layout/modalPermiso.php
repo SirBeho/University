@@ -15,7 +15,7 @@
 
         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Editar Permisos</h3>
 
-        <form action="../controller/CUD_permisos.php" id="modalpermiso" method="post" class="space-y-6 relative" action="#">
+        <form action="../controller/U_permisos.php" id="modalpermiso" method="post" class="space-y-6 relative" action="#">
 
             <input type="hidden" name="id" >
 

@@ -10,10 +10,17 @@
             </svg>
         </button>
 
-        <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Clase</h3>
+        <div class="flex items-center gap-4 mb-4">
+                <div class="h-10 w-10 overflow-hidden rounded-lg">
+                    <img id="imagemodal" class="w-full h-full object-cover" src="" alt="">
+                </div>
+                <span id="titulo"  class="text-xl font-medium text-gray-900 dark:text-white">Agregar Clase</span>
+            </div>
 
         <form action="../controller/CUD_clase.php" id="modalclase" method="post" class="space-y-6 relative" action="#">
             
+        
+            <input type="hidden" name="accion" value="create">
             <input type="hidden" name="id">
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Nombre de la materia

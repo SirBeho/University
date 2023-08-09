@@ -23,9 +23,26 @@ $datos = $resultado->fetch_assoc();
     </script>
 
     <div class=" flex justify-between my-4">
-        <h1 class="text-2xl">Alumnos de la clase de <?php echo $datos['ma_nombre']; ?></h1>
+        <div class="flex items-center gap-4">
+            
+           <form action="../controller/U_photo.php" enctype="multipart/form-data" id="photoForm" method="post" class=" relative ">
+                <label class="w-fit flex gap-5 items-center cursor-pointer">
+                    <input id="photo_clase" type="file" name="profile_photo" accept="image/*" class="hidden" onchange="showImg(event)">
+                    <div class="h-12 w-12 flex items-center justify-center overflow-hidden relative rounded-lg">
+                        <img class="absolute w-1/3" src="../svg/camara.svg" alt="">
+                        <img id="imagePreview" class="w-full h-full object-cover bg-blue-200" src="../pictures/<?php echo is_file("../pictures/clase_" . $id_mat) ? "clase_" . $id_mat : "school.svg" ?>" alt="">
+                    </div>
+                </label>
+            </form>
+
+            <h1 class="text-2xl">Alumnos de la clase de <?php echo $datos['ma_nombre']; ?></h1>
+        </div>
         <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600"><?php echo $datos['ma_nombre']; ?></span></span>
     </div>
+
+    
+
+
 
     <div class="w-full bg-white rounded-md">
         <div class="relative flex justify-between items-center border-b p-2">

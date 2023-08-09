@@ -10,10 +10,16 @@
             </svg>
         </button>
 
-        <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Maestro</h3>
+        <div class="flex items-center gap-4 mb-4">
+                <div class="h-10 w-10 overflow-hidden rounded-lg">
+                    <img id="imagemodal" class="w-full h-full object-cover" src="" alt="">
+                </div>
+                <span id="titulo"  class="text-xl font-medium text-gray-900 dark:text-white">Agregar Alumno</span>
+            </div>
 
-        <form action="../controller/CUD_maestro_register.php" id="maestroForm" method="post" class="space-y-6 relative" action="#">
-
+        <form action="../controller/CUD_alumno.php" id="alumnoForm" method="post" class="space-y-6 relative" action="#">
+             <input type="hidden" name="accion" value="create">
+                <input type="hidden" name="id">
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">DNI
                 <input type="text" name="dni" autocomplete="off" placeholder="Ingrese la matricula" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
@@ -23,16 +29,16 @@
             </label>
 
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Nombre
-                <input type="text" name="nombre" autocomplete="off" placeholder="Ingrese el nombre" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                <input type="text" name="name" autocomplete="off" placeholder="Ingrese el nombre" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </label>
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Apellido
-                <input type="text" name="apellido" autocomplete="off" placeholder="Ingrese el apellido" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                <input type="text" name="lastname" autocomplete="off" placeholder="Ingrese el apellido" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </label>
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Direccion
                 <input type="text" name="addres" autocomplete="off" placeholder="Ingrese la direccion" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </label>
             <label class="block text-sm font-medium text-gray-900 dark:text-white">Fecha de Nacimiento
-                <input type="date" name="born" autocomplete="off" placeholder="dd/mm/yyyy" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                <input type="date" name="birth" autocomplete="off" placeholder="dd/mm/yyyy" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
             </label>
 
             <div id="btn_modal" class="flex justify-end gap-2 mt-2">

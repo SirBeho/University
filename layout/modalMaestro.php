@@ -9,8 +9,13 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
             </svg>
         </button>
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-10 w-10 overflow-hidden rounded-lg">
+                    <img id="imagemodal" class="w-full h-full object-cover" src="" alt="">
+                </div>
+                <span id="titulo" class="text-xl font-medium text-gray-900 dark:text-white">Agregar Alumno</span>
+            </div>
 
-        <h3 id="titutlo" class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Agregar Alumno</h3>
 
         <form action="../controller/CUD_maestro.php" id="modalmaestro" method="post" class="space-y-6 relative" >
             <input type="hidden" name="accion" value="create">

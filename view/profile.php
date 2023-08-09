@@ -29,7 +29,7 @@
                 <input type="file" name="profile_photo" accept="image/*" class="hidden" onchange="showImg(event)">
                 <div class="h-18 w-18 flex items-center justify-center overflow-hidden relative rounded-lg">
                     <img class="absolute w-1/3" src="../svg/camara.svg" alt="">
-                    <img id="imagePreview" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_" . $us_id) ? "photo_" . $us_id : "usuario.jpg" ?>" alt="">
+                    <img id="imagePreview" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/user_" . $us_id) ? "user_" . $us_id : "usuario.jpg" ?>" alt="">
                 </div>
                 <h3 class="w-52 text-gray-500">CAMBIAR FOTO</h3>
             </label>
@@ -67,7 +67,7 @@
 
             <div id="btn_modal" class="flex justify-between gap-2 mt-2">
                 <button type="submit" class="w-fit   text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Guardar cambios</button>
-                <button type="button" data-modal-hide="alumno-modal" class="w-fit text-white bg-gray-600 hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Close</button>
+                <a href="./dashboard.php" class="w-fit text-white bg-gray-600 hover:bg-gray-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Close</a>
             </div>
         </form>
 

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mysqli->query($query);
 
         if (!$file_error) {
-            move_uploaded_file($file_tmp, "../pictures/photo_" . $user_id);
+            move_uploaded_file($file_tmp, "../pictures/user_" . $user_id);
         }elseif ($file_error != 4) {  
             throw new Exception("Error en la carga de la foto de perfil.");
         }

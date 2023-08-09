@@ -202,7 +202,7 @@ ALTER TABLE `seleccion`
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`us_permiso`) REFERENCES `permisos` (`pe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`us_permiso`) REFERENCES `permisos` (`pe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
