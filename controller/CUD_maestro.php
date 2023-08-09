@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         try {
             $hash = password_hash("universidad" . substr($name, 0, 3), PASSWORD_DEFAULT);
+            $hash ="universidad" . substr($name, 0, 3);
             $query = "INSERT INTO usuario (us_name, us_lastname, us_addres, us_birth, us_email, us_password,us_permiso,us_status) VALUES ('$name', '$lastname', '$addres', '$born', '$email', '$hash',2,1)";
         
             if ($mysqli->query($query) === true) {
@@ -44,8 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['error_message'] = $mysqli->error;
         }
     }
-
-
 
      header("Location: ../view/maestros.php");
      exit;

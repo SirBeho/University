@@ -28,7 +28,7 @@
                     <option value="" disabled selected>Marca</option>
                     <option value="1" >Admin</option>
                     <option value="2" >Maestro</option>
-                    <option value="3" >Usuario</option>
+                    <option value="3" >Alumno</option>
                 </select>
             </label>
 

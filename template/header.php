@@ -7,7 +7,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 extract($_SESSION['usuario']);
 
-include ("../functions/etiquetas.php");
+include("../functions/etiquetas.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +27,10 @@ include ("../functions/etiquetas.php");
     <link href="../DataTables/datatables.min.css" rel="stylesheet">
     <script src="../DataTables/datatables.min.js"></script>
 </head>
+
 <body>
     <div class="flex h-screen w-screen">
-        <?php include_once '../template/Slidebar.php'?>
+        <?php include_once '../template/Slidebar.php' ?>
         <div class="flex flex-col w-full h-full ">
             <nav class="flex justify-between px-4 min-h-[3rem] bg-white relative">
 
@@ -44,9 +45,14 @@ include ("../functions/etiquetas.php");
                 </div>
 
                 <div id="control-menu" class="flex items-center gap-2 cursor-pointer">
+                    <div class="h-8 w-8 overflow-hidden rounded-lg">
+                        <!-- Mostrar imagen de perfil del usuario o "usuario.jpg" si no está definida -->
+                        <img id="imagePreviewmenu" class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/photo_" . $us_id) ? "photo_" . $us_id : "usuario.jpg" ?>" alt="">
+                    </div>
+
 
                     <span class="hidden sx:block font-semibold text-xs leading-snug"><?php echo $us_name . " " . $us_lastname ?></span>
-                    <div class="hidden sx:block w-4 transform transition-transform duration-500 ">
+                    <div id="icon_menu" class="hidden sx:block w-6 transform transition-transform duration-500 ">
                         <img src="../svg/arrow.svg" alt="logo" />
                     </div>
                 </div>
@@ -61,7 +67,6 @@ include ("../functions/etiquetas.php");
                         </a>
                     </div>
 
-                    
                     <a href="../controller/CUD_logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
                         <div class="w-6">
                             <img src="../svg/logout.svg" alt="">

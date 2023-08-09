@@ -6,15 +6,15 @@ Este repositorio contiene el código fuente de un sistema de gestión académica
 
 ### Administrador
 - Correo electrónico: benjamin@gmail.com
-- Contraseña: universidad
+- Contraseña: universidadasd
 
 ### Maestro
 - Correo electrónico: robinson@gmail.com
-- Contraseña: universidad
+- Contraseña: universidadasd
 
 ### Alumno
 - Correo electrónico: kevin@gmail.com
-- Contraseña: universidad
+- Contraseña: universidadasd
 
 ## Descripción
 

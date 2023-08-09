@@ -14,7 +14,7 @@ function showImg(event) {
   } else {
     // Si no se selecciona un archivo, mostrar la imagen predeterminada
     console.log("errors");
-    imagePreview.src = `./pictures/<?php echo is_file("../pictures/photo_".$id) ? "photo_".$id : "usuario.jpg" ?>`;
+    imagePreview.src = `./pictures/<?php echo is_file("../pictures/photo_".$us_id) ? "photo_".$us_id : "usuario.jpg" ?>`;
   }
 }
 
@@ -31,7 +31,7 @@ function Msj() {
     }, 1);
     setTimeout(() => {
       msj.remove();
-    }, 50000);
+    }, 10000);
   }
 }
 Msj();
@@ -139,7 +139,7 @@ function EditarClases(id) {
 
 function EditarCalificacion(id) {
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", "../model/R_clases_alumno.php?id=" + id, true);
+  xhr.open("GET", "../model/R_clases_calificacion.php?id=" + id, true);
   xhr.send();
 
   xhr.onreadystatechange = function () {

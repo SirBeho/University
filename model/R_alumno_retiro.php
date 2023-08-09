@@ -20,12 +20,20 @@ if (!empty($_GET['id'])) {
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
+                $id = $datos['se_id'];
+                $nombre = $datos['ma_nombre'];
+                $eliminar = array(
+                    'controller' => "CUD_clase.php",
+                    'accion' => "delete",
+                    'query' => "DELETE FROM seleccion WHERE se_id = $id",
+                    'msj' =>  "Retirar $nombre"
+                );  
     ?>
         <tr>
             <td><?php echo $datos['se_id']; ?></td>
             <td><?php echo $datos['ma_nombre']; ?></td>
             <td>
-                <img onclick="RetirarMateria(<?php echo $datos['se_id']; ?>)" data-modal-target="retiro-modal" data-modal-toggle="retiro-modal" class="cursor-pointer" src="../svg/retirar.svg" alt="">
+                <img onclick='Eliminar(<?php echo json_encode($eliminar); ?> )' data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="cursor-pointer" src="../svg/retirar.svg" alt="">
             </td>
         </tr>
     <?php

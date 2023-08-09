@@ -25,7 +25,7 @@ if (!empty($_GET['id'])) {
                 $eliminar = array(
                     'controller' => "CUD_maestro.php",
                     'accion' => "delete",
-                    'query' => "DELETE FROM usuario WHERE us_usuario = $id",
+                    'query' => "DELETE FROM usuario WHERE us_id = $id",
                     'msj' =>  "Eliminar a $nombre"
                 );  
                 

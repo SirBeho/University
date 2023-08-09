@@ -33,7 +33,6 @@ if (!empty($_GET['id'])) {
                              <div class="flex gap-2 w-12 justify-center overflow-hidden bg-transparent">
                                 <div>
                                     <img class="cursor-pointer" src="../svg/edit.svg" alt="">
-                                    
                                 </div>
                                 <!-- <div>
                                     <img src="../svg/trash.svg" class="cursor-pointer" alt="">

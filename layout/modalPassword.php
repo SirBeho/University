@@ -12,7 +12,7 @@
             
             <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Modificar Contraseña</h3>
                
-            <form action="../php/password.php" id="passwordForm" method="post"  class="space-y-6 relative" action="#">
+            <form action="../controller/U_password.php" id="passwordForm" method="post"  class="space-y-6 relative" action="#">
                  
                     <label class="block text-sm font-medium text-gray-900 dark:text-white">Nueva Contraseña
                         <input type="password"   name="password1" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg mt-2 focus:ring-blue-500  focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="ingrese la nuea contraseña" required>

@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+ob_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +46,7 @@
                 <!-- Mostrar mensaje de error si está configurado -->
                 <?php
                 if (isset($_SESSION['error_message'])) {
-                    echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out mb-8 bottom-8" >' . $_SESSION['error_message'] . '</p>';
+                    echo '<p id="msj" class="text-red-500 w-3/4 text-center absolute transform duration-500 ease-in-out mb-16 bottom-8" >' . $_SESSION['error_message'] . '</p>';
                     unset($_SESSION['error_message']);
                 }
                 ?>
@@ -60,3 +61,4 @@
 </body>
 
 </html>
+<?php ob_end_flush(); ?>

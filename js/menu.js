@@ -26,7 +26,7 @@ document.getElementById("toggle").addEventListener("click", function () {
 const targetDiv = document.getElementById("menu");
 const boton = document.getElementById("control-menu"); // Botón para controlar el menú
 boton.addEventListener("click", function () {
-  boton.querySelector("div").classList.toggle("rotate-180");
+  boton.querySelector("#icon_menu").classList.toggle("rotate-180");
   targetDiv.classList.toggle("h-0");
   targetDiv.classList.toggle("h-28");
   targetDiv.classList.toggle("opacity-0");

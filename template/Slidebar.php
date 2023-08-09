@@ -79,6 +79,16 @@
         <?php if ($us_permiso == 3) : ?>
             <li class="hover:bg-white">
 
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./calificaciones.php">
+                    <div class="h-5 w-5"><img src="../svg/nota.svg " alt="" srcset=""></div>
+                    <span class="hidden">Ver calificaciones</span>
+
+                </a>
+            </li>
+
+
+            <li class="hover:bg-white">
+
                 <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_a.php">
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden">Administra tus clases</span>
