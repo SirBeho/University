@@ -1,14 +1,18 @@
 <?php include '../template/header.php';
-ob_start();
+
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../index.php");
     die();
 }
-if (!isset($_SESSION['materias_ids']) || !in_array($_GET['id'], $_SESSION['materias_ids'])) {
+if (!isset($_SESSION['materias_ids']) || !in_array($_GET['id_m'], $_SESSION['materias_ids'])) {
     header("Location: ./clases_m.php");
     die();
 }
-ob_end_flush();
+$id_mat = $_GET['id_m'];
+$_SESSION['id_mat'] = $_GET['id_m'];
+$resultado = $mysqli->query("SELECT * FROM materia where ma_id = $id_mat");
+$datos = $resultado->fetch_assoc();
+
 ?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
@@ -19,14 +23,26 @@ ob_end_flush();
     </script>
 
     <div class=" flex justify-between my-4">
-        <h1 class="text-2xl">Alumnos de la clase de Matematica</h1>
-        <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Matematica</span></span>
+        <h1 class="text-2xl">Alumnos de la clase de <?php echo $datos['ma_nombre']; ?></h1>
+        <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600"><?php echo $datos['ma_nombre']; ?></span></span>
     </div>
 
     <div class="w-full bg-white rounded-md">
-        <div class="flex justify-between items-center border-b p-2">
+        <div class="relative flex justify-between items-center border-b p-2">
             <span class="block ">Lista de Alumnos</span>
-         </div>
+            <?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
+                unset($_SESSION['error_message']);
+            }
+            if (isset($_SESSION['success_message'])) {
+                echo '<span id="msj" class="text-green-500 w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                unset($_SESSION['success_message']);
+            }
+            ?>
+        
+        
+        </div>
 
 
         <div class="p-4">
@@ -35,62 +51,29 @@ ob_end_flush();
                     <tr>
                         <th>#</th>
                         <th>Nombre de Alumno</th>
-                
                         <th>Calificacion</th>
-
                         <th>Mensaje</th>
-                        <th>Fec. De Nacimiento</th> <!-- //no va -->
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td><?php echo EtiquetaMensaje("Te fue bien") ?></td>
-                        <td>
-                               
-                         <img data-modal-target="calificacion-modal" data-modal-toggle="calificacion-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
-                            
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td><?php echo EtiquetaMensaje("") ?></td>
-                        <td>
-                               
-                         <img data-modal-target="calificacion-modal" data-modal-toggle="calificacion-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
-                            
-                        </td>
-                    </tr>
-                   
-                   
+                <?php include "../model/clases_calificacion.php" ?>
+                
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th>Nombre</th>
-                        <th>Puesto</th>
-                        <th>Oficina</th>
-                        <th>Edad</th>
-                        <th>Fecha de inicio</th>
-                        <th>Salario</th>
+                        <th>#</th>
+                        <th>Nombre de Alumno</th>
+                        <th>Calificacion</th>
+                        <th>Mensaje</th>
+                        <th>Acciones</th>
                     </tr>
                 </tfoot>
             </table>
         </div>
     </div>
 
-    <?php
-    if (isset($_SESSION['error_message'])) {
-        echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out mb-8 bottom-8">' . $_SESSION['error_message'] . '</p>';
-        unset($_SESSION['error_message']);
-    }
-    ?>
+    
 </main>
 
 <?php include  '../layout/modalCalificacion.php' ?>

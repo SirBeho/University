@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $status = isset($_POST["status"]);
 
-
     $query = "UPDATE usuario SET us_email='$email',us_permiso='$permiso',us_status='$status' WHERE us_id='$id'";
 
     if (($id != $_SESSION['usuario']['us_id']) and $mysqli->query($query) === true) {

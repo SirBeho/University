@@ -28,7 +28,7 @@ const boton = document.getElementById("control-menu"); // Botón para controlar 
 boton.addEventListener("click", function () {
   boton.querySelector("div").classList.toggle("rotate-180");
   targetDiv.classList.toggle("h-0");
-  targetDiv.classList.toggle("h-36");
+  targetDiv.classList.toggle("h-28");
   targetDiv.classList.toggle("opacity-0");
 });
 

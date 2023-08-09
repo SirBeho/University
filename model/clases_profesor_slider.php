@@ -12,9 +12,8 @@ if ($resultado) {
         while ($datos = $resultado->fetch_assoc()) {
             $materiasIds[] = $datos['ma_id'];
 ?>
-
             <li>
-                <a href="./alumnos_m.php?id=<?php echo $datos['ma_id']; ?>" class="flex w-full gap-2 items-center whitespace-nowrap px-1 py-2 bg-gray-sl  transform duration-300"><?php echo $datos['ma_nombre']; ?></a>
+                <a href="./alumnos_m.php?id_m=<?php echo $datos['ma_id']; ?>" class="flex w-full gap-2 items-center whitespace-nowrap px-1 py-2 bg-gray-sl  transform duration-300"><?php echo $datos['ma_nombre']; ?></a>
             </li>
         <?php
 

@@ -1,4 +1,6 @@
-<?php include '../template/header.php' ?>
+<?php include '../template/header.php'
+
+?>
 <main class="h-full w-full flex flex-col bg-gray-100 px-4">
 
     <script>
@@ -9,15 +11,23 @@
 
 
         <!-- titulo -->
-    <div class=" flex justify-between my-4">
+    <div class="relative flex justify-between my-4">
         <h1 class="text-2xl">Esquema de Clases</h1>
         <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Clases</span></span>
+        <?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
+                unset($_SESSION['error_message']);
+            }
+            if (isset($_SESSION['success_message'])) {
+                echo '<span id="msj" class="text-green-500 w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                unset($_SESSION['success_message']);
+            }
+            ?>
     </div>
 
-
-
     <div class="flex gap-4">
-<!-- izquierd -->
+       <!-- izquierd -->
         <div class=" flex flex-col w-full bg-white rounded-md shadow-md">
             <span class="flex border-b p-2">
                 Tus Materias Inscritas
@@ -28,27 +38,12 @@
                         <tr >
                             <th class="w-auto ">#</th>
                             <th class="w-80">Materia</th>
-                            
                             <th class="w-80">Darse de baja</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>System Architect</td>
-                            <td>
-                                <img data-modal-target="retiro-modal" data-modal-toggle="retiro-modal" class="cursor-pointer" src="../svg/retirar.svg" alt="">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>System Architect</td>
-                            <td>
-                                <img data-modal-target="retiro-modal" data-modal-toggle="retiro-modal" class="cursor-pointer" src="../svg/retirar.svg" alt="">
-                            </td>
-                        </tr>
+                         <?php include "../model/alumno_retiro.php" ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
@@ -64,25 +59,11 @@
 
             <form action="./prueva.php" id="inscribirForm" method="post" class="flex flex-col p-4 border rounded-md">
 
-                <label>
-                    <input type="checkbox" name="item[]" value="1" class="sr-only peer ">
-                    <span class="block ps-2 peer peer-checked:bg-blue-200">Matematica</span>
-                </label>
-                <label>
-                    <input type="checkbox" name="item[]" value="2" class="sr-only peer">
-                    <span class="block ps-2 peer  peer-checked:bg-blue-200">Matematica</span>
-                </label>
-                <label>
-                    <input type="checkbox" name="item[]" value="3" class="sr-only peer">
-                    <span class="block ps-2 peer  peer-checked:bg-blue-200">Matematica</span>
-                </label>
-
-
-
-                
+            <?php include "../model/alumno_inscribir.php" ?>
+               
             </form>
             <button type="submit" class="self-end  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Enviar
+                    Inscribir
             </button>
             </div>
         </div>

@@ -15,7 +15,7 @@
                                 echo 'Maestro';
                                 break;
                             case 3:
-                                echo 'Alumno<';
+                                echo 'Alumno';
                                 break;
                             default:
                                 echo 'Desconocido';
@@ -64,7 +64,7 @@
 
         <?php if ($us_permiso == 2) : ?>
             <li class="hover:bg-white flex">
-                <a class="flex w-full gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_m.php?id=8">
+                <a class="flex w-full gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_m.php">
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden justify-between ">Mis Clases </span>
                 </a>

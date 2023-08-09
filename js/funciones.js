@@ -147,6 +147,52 @@ function delaySubmitForm(event) {
             }
         };
     }
+
+    function EditarCalificacion(id) {
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../model/clases_alumno.php?id=" + id, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const userData = JSON.parse(xhr.responseText);
+                if (userData.error) {
+                    console.error(userData.error);
+                } else {
+                    
+                    console.log(userData.data)
+                    const modal = document.getElementById("calificacionModal");
+                    
+                    modal.id.value= userData.data.se_id;
+                    modal.nombre.value= userData.data.us_name;
+                    modal.calificacion.value= userData.data.se_nota;
+                    modal.mensaje.value= userData.data.se_mensaje;
+                   
+                }
+            }
+        };
+    }
+
+    function RetirarMateria(id) {
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "../model/alumno_retiro.php?id=" + id, true);
+        xhr.send();
+    
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const userData = JSON.parse(xhr.responseText);
+                if (userData.error) {
+                    console.error(userData.error);
+                } else {
+                    document.getElementById("materia_id").value = userData.data.se_id
+                    document.getElementById("materia_name").innerText = userData.data.ma_nombre
+                }
+            }
+        };
+    }
+    
     
     
     

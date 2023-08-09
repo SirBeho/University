@@ -15,9 +15,19 @@
     </div>
 
     <div class="w-full bg-white rounded-md">
-        <div class="flex justify-between items-center border-b p-2">
+        <div class="relative flex justify-between items-center border-b p-2">
             <span class="block ">Informacion de Alumnos</span>
             <!-- <button data-modal-target="alumno-modal" data-modal-toggle="alumno-modal" type="submit" class="w-fit    text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar Alumno</button> -->
+            <?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
+                unset($_SESSION['error_message']);
+            }
+            if (isset($_SESSION['success_message'])) {
+                echo '<span id="msj" class="text-green-500 w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                unset($_SESSION['success_message']);
+            }
+            ?>
         </div>
 
 

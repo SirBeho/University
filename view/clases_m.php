@@ -11,9 +11,19 @@
 
 
 
-    <div class=" flex justify-between my-4">
+    <div class="relative flex justify-between my-4">
         <h1 class="text-2xl">Lista de Clases</h1>
         <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Clases</span></span>
+        <?php
+            if (isset($_SESSION['error_message'])) {
+                echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
+                unset($_SESSION['error_message']);
+            }
+            if (isset($_SESSION['success_message'])) {
+                echo '<span id="msj" class="text-green-500 w-full text-center absolute transform duration-500 ease-in-out left-0 bottom-8">' . $_SESSION['success_message'] . '</span>';
+                unset($_SESSION['success_message']);
+            }
+            ?>
     </div>
 
     
@@ -26,12 +36,7 @@
 
     </div>
 
-    <?php
-    if (isset($_SESSION['error_message'])) {
-        echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out mb-8 bottom-8">' . $_SESSION['error_message'] . '</p>';
-        unset($_SESSION['error_message']);
-    }
-    ?>
+   
 </main>
 
 <?php include  '../layout/modalClase.php' ?>
