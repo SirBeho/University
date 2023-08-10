@@ -37,6 +37,8 @@ Este sistema se presenta como una herramienta completa para la gestión educativ
 
 - **Opciones de Navegacion**: Muestra acceso a las paguinas en base al permiso/rol.
 
+- **Modo Oscuro**: Muestra el boton para cambiar entre como oscuro y claro.
+
 ## Funciones por Rol
 
 ### Funciones para Administradores:
@@ -86,12 +88,12 @@ Estas funcionalidades permiten a cada rol realizar tareas específicas dentro de
 ## Tecnologías Utilizadas
 
 - **Lenguajes de Programación**: PHP, HTML, CSS, JavaScript
-- **Framework Front-End**: Tailwind CSS
+- **Framework Front-End**: Tailwind CSS, Bootstrap
 - **Biblioteca JavaScript**: jQuery
 - **Base de Datos**: MySQL
 - **Herramienta de Control de Versiones**: Git
 - **Plataforma de Desarrollo**: Visual Studio Code
-- **Servidor Web**: 
+- **Servidor Web**: https://www.000webhost.com
 
 
 
@@ -129,15 +131,19 @@ Estas funcionalidades permiten a cada rol realizar tareas específicas dentro de
 
 **Desarrollo Completo de la UI desde Cero**: La interfaz de usuario ha sido `desarrollada desde cero`, garantizando una experiencia única y coherente.
 
+**Modo Oscuro**: Se implemento la funcionalidad de `Dark Mode` en todas las paguinas del proyecto.
+
 ## Funcionalidades Adicionales Acordes a la Lógica del Negocio:
 
 **Multiples materias por maestros**: Los maestros pueden tener y gestionar `varias materias` desde la vista ***`Mis Clases`***.
 
 **Foto de perlil**: Los usuarios pueden subir y modificar una su `foto de perfil`.
 
-**Contraseña por defecto**: Se `genera una contraseña` para cada usuario en base a su nombre la cual puede ser cambiada.
+**Contraseña por defecto**: Se establece una `contraseña por defecto` la cual da acceso al perfil para que el usuario ponga una propia.
 
-**foto de materias**: Los profesores pueden subir una `foto para cada materia`.
+**Foto de materias**: Los profesores pueden subir una `foto para cada materia`.
+
+**Pagina de documentacion**: El footer contiene un link hacia la `documentacion` del proyecto.
 
 
 ## Nota
@@ -146,6 +152,6 @@ Este proyecto demuestra un esfuerzo significativo en la implementación de las f
 
 ## Autor
 
-Este proyecto fue desarrollado por [Benjamin Tavarez](https://github.com/SirBeho), como parte del programa de  [Fumval - Desarrollo web full strack](enlace_al_curso_o_proyecto).
+Este proyecto fue desarrollado por [Benjamin Tavarez](https://github.com/SirBeho), como parte del programa de  [Funval - Desarrollo web full strack](https://www.estudiantefunval.org/).
 
 Si tienes alguna pregunta o comentario sobre este proyecto, no dudes en ponerte en contacto conmigo a través de [benjamin.tavarez.98@gmail.com](benjamin.tavarez.98@gmail.com) o en [LinkedIn](https://www.linkedin.com/in/benjamin-tavarez-cruceta-052aa623b/).

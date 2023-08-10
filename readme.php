@@ -116,6 +116,7 @@
                         <ul class="list-disc pl-6">
                             <li>Perfil de Usuario: Muestra información del usuario actual, como nombre, apellido y permiso/rol.</li>
                             <li>Opciones de Navegación: Muestra acceso a las páginas en base al permiso/rol.</li>
+                            <li>Modo Oscuro: Muestra el boton para cambiar entre como oscuro y claro.</li>
                         </ul>
                     </div>
                 </div>
@@ -171,12 +172,12 @@
                 <div class="bg-white p-4 shadow rounded mt-2">
                     <ul class="list-disc pl-6">
                         <li><strong>Lenguajes de Programación:</strong> PHP, HTML, CSS, JavaScript</li>
-                        <li><strong>Framework Front-End:</strong> Tailwind CSS</li>
+                        <li><strong>Framework Front-End:</strong> Tailwind CSS, Bootstrap</li>
                         <li><strong>Biblioteca JavaScript:</strong> jQuery</li>
                         <li><strong>Base de Datos:</strong> MySQL</li>
                         <li><strong>Herramienta de Control de Versiones:</strong> Git</li>
                         <li><strong>Plataforma de Desarrollo:</strong> Visual Studio Code</li>
-                        <li><strong>Servidor Web:</strong> (Sin especificar)</li>
+                        <li><strong>Servidor Web:</strong> https://www.000webhost.com</li>
                     </ul>
                 </div>
 
@@ -204,6 +205,7 @@
                         <li><strong>Mensaje de Maestro a Alumno en "Ver Calificaciones":</strong> Los alumnos pueden ver los mensajes del maestro.</li>
                         <li><strong>Plugin de Datatables:</strong> El uso del plugin de Datatables para la visualización y manipulación de tablas ha sido implementado.</li>
                         <li><strong>Desarrollo Completo de la UI desde Cero:</strong> La interfaz de usuario ha sido desarrollada desde cero, garantizando una experiencia única y coherente.</li>
+                        <li><strong>Dark Mode:</strong> Se implemento la funcionalidad del `modo oscuro` en todas las paguinas del proyecto.</li>
                     </ul>
                 </div>
 
@@ -213,8 +215,9 @@
                     <ul class="list-disc pl-6">
                         <li><strong>Múltiples materias por maestros:</strong> Los maestros pueden tener y gestionar varias materias desde la vista "Mis Clases".</li>
                         <li><strong>Foto de perfil:</strong> Los usuarios pueden subir y modificar su foto de perfil.</li>
-                        <li><strong>Contraseña por defecto:</strong> Se genera una contraseña para cada usuario en base a su nombre la cual puede ser cambiada.</li>
+                        <li><strong>Contraseña por defecto:</strong> Se establece una contraseña de inicio la cual da acceso al perfil para que el usuario ponga una propia..</li>
                         <li><strong>Foto de materias:</strong> Los profesores pueden subir una foto para cada materia.</li>
+                        <li><strong>Pagina de documentacion:</strong> El footer contiene un link hacia la `documentacion` del proyecto..</li>
                     </ul>
                 </div>
 
