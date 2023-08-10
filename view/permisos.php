@@ -30,7 +30,7 @@
         </div>
 
         <div class="p-4">
-            <table id="table_id" class="display table table-bordered  " style="width:100%">
+            <table id="table_id" class="display table table-bordered table-dark " style="width:100%">
                 <thead>
                     <tr>
                         <th>#</th>

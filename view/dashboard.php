@@ -4,21 +4,17 @@ include '../template/header.php';
 
 ?>
 
-<main class="h-full flex flex-col  bg-gray-100 px-3"> 
-    
+<main class="h-full flex flex-col bg-gray-100 dark:bg-gray-800 px-3 dark:text-white">
     <div class="w-full flex justify-between my-4">
-        <h1 class="text-2xl">Dashboard</h1>
-        <span class="text-sm text-blue-900">Home / <span class=" text-gray-600">Dashboard</span></span>
+        <h1 class="text-2xl ">Dashboard</h1>
+        <span class="text-sm text-blue-900 dark:text-gray-400">Home / <span class="text-gray-600 dark:text-gray-400">Dashboard</span></span>
     </div>
 
-    <div class="w-fit bg-white p-2 rounded-md pe-4">
-        Bienvenido</br> Selecciona la accion que quieras realizar e las pestañas del menu de la izquierda
+    <div class="w-fit bg-white dark:bg-gray-700 p-2 rounded-md pe-4">
+        Bienvenido<br> Selecciona la acción que quieras realizar en las pestañas del menú de la izquierda.
     </div>
-
-    
-    
-
 </main>
+
 
 
 <?php include  '../layout/modalDelete.php' ?>

@@ -1,4 +1,4 @@
-<aside id="slidebar" class="bg-gray-sl text-gray-100 border-gray-100 w-60 toggle transform duration-300 ease-out">
+<aside id="slidebar" class="bg-gray-sl dark:bg-gray-700 text-gray-100 border-gray-100 border-e w-60 toggle transform duration-300 ease-out">
     <div class="flex items-center gap-2 h-12 px-4 py-2 border-b-[0.1px] ">
         <div class="w-6 h-6 rounded-full overflow-hidden  ">
             <img class=" max-w-[253%] m-[-50%-75%]" src="../pictures/logo.jpg" alt="">
@@ -30,14 +30,14 @@
         <?php if ($us_permiso == 1) : ?>
             <li class="hover:bg-white">
 
-                <a class=" flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl   transform duration-300" href="./permisos.php">
+                <a class=" flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700  transform duration-300" href="./permisos.php">
                     <div class="h-5 w-5"><img src="../svg/permissions.svg" alt="" srcset=""></div>
                     <span class="hidden">Permisos</span>
                 </a>
             </li>
 
             <li class=" hover:bg-white">
-                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./maestros.php">
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700 transform duration-300" href="./maestros.php">
                     <div class="h-5 w-5"><img src="../svg/teacher.svg" alt="" srcset=""></div>
                     <span class="hidden">Maestros</span>
 
@@ -45,7 +45,7 @@
             </li>
             <li class="hover:bg-white">
 
-                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./alumnos.php">
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700 transform duration-300" href="./alumnos.php">
                     <div class="h-5 w-5"><img src="../svg/student.svg" alt="" srcset=""></div>
                     <span class="hidden">Alumnos</span>
                 </a>
@@ -53,7 +53,7 @@
 
             <li class="hover:bg-white">
 
-                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases.php">
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700  transform duration-300" href="./clases.php">
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden">Clases</span>
 
@@ -64,7 +64,7 @@
 
         <?php if ($us_permiso == 2) : ?>
             <li class="hover:bg-white flex">
-                <a class="flex w-full gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_m.php">
+                <a class="flex w-full gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700 transform duration-300" href="./clases_m.php">
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden justify-between ">Mis Clases </span>
                 </a>
@@ -79,7 +79,7 @@
         <?php if ($us_permiso == 3) : ?>
             <li class="hover:bg-white">
 
-                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./calificaciones.php">
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700  transform duration-300" href="./calificaciones.php">
                     <div class="h-5 w-5"><img src="../svg/nota.svg " alt="" srcset=""></div>
                     <span class="hidden">Ver calificaciones</span>
 
@@ -89,7 +89,7 @@
 
             <li class="hover:bg-white">
 
-                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl  transform duration-300" href="./clases_a.php">
+                <a class="flex gap-2 items-center whitespace-nowrap py-2 bg-gray-sl dark:bg-gray-700  transform duration-300" href="./clases_a.php">
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden">Administra tus clases</span>
 

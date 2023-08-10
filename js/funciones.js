@@ -57,6 +57,35 @@ function delaySubmitForm(event) {
   loadingScreen.style.background = "#8c8be673";
   document.body.appendChild(loadingScreen);
 }
+
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    const sectionTop = section.offsetTop;
+    window.scrollTo({
+      top: sectionTop - 80, // Ajusta este valor según la altura de tu barra de navegación
+      behavior: 'smooth'
+    });
+  }
+}
+
+       
+function toggleDarkMode() {
+
+
+  const darkModePreference = sessionStorage.getItem('darkMode');
+
+    if (darkModePreference === 'enabled') {
+        document.querySelector('html').classList.remove('dark');
+        sessionStorage.setItem('darkMode', 'disabled');
+    } else {
+        document.querySelector('html').classList.add('dark');
+        sessionStorage.setItem('darkMode', 'enabled');
+    }
+}
+
+
 function EditarPermisos(id) {
   // Realizar una solicitud AJAX
   const xhr = new XMLHttpRequest();

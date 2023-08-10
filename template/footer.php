@@ -1,9 +1,10 @@
-            <footer>
+            <footer class="dark:bg-gray-700">
                 hola
             </footer>
 
         </div>
     </div>
+
 </body>
 </html>
 
