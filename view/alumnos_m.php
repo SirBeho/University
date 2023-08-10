@@ -14,7 +14,7 @@ $resultado = $mysqli->query("SELECT * FROM materia where ma_id = $id_mat");
 $datos = $resultado->fetch_assoc();
 
 ?>
-<main class="h-full w-full flex flex-col bg-gray-100 px-4">
+<main class="h-full flex flex-col bg-gray-200 dark:bg-gray-800 mx-3 dark:text-white">
 
     <script>
         $(document).ready(function() {
@@ -37,14 +37,14 @@ $datos = $resultado->fetch_assoc();
 
             <h1 class="text-2xl">Alumnos de la clase de <?php echo $datos['ma_nombre']; ?></h1>
         </div>
-        <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600"><?php echo $datos['ma_nombre']; ?></span></span>
+        <span class="text-sm text-blue-900 dark:text-blue-600">Home / <span class="text-gray-600 dark:text-gray-400"><?php echo $datos['ma_nombre']; ?></span></span>
     </div>
 
     
 
 
 
-    <div class="w-full bg-white rounded-md">
+    <div class="w-full bg-white dark:bg-gray-700 rounded-md shadow-md">
         <div class="relative flex justify-between items-center border-b p-2">
             <span class="block ">Lista de Alumnos</span>
             <?php

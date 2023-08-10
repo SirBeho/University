@@ -11,7 +11,7 @@
     
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-200">
     <header class="bg-blue-500 py-4 fixed w-screen shadow-xl ">
         <div class="ps-4 container mx-auto flex justify-between items-center">
             <h1 class="text-white text-2xl font-semibold">Documentacion - Sistema de Gestión Académica</h1>
@@ -20,7 +20,7 @@
 
     <div class="container mx-auto pt-4 ">
 
-        <aside class="flex flex-col min-w-[18rem] bg-gray-100 p-4 shadow fixed top-16 h-screen ">
+        <aside class="flex flex-col min-w-[18rem] bg-gray-200 p-4 shadow fixed top-16 h-screen ">
             <!-- Perfil de Usuario -->
             <div class=" flex flex-col mb-4  ">
                 <h2 class="text-lg font-semibold border-b-2 border-blue-400 ">Autor</h2>

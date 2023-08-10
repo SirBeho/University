@@ -177,7 +177,7 @@ table {
   border-collapse: collapse;
 }
 
-.table {
+.dark table.table {
   --bs-table-color-type: initial;
   --bs-table-bg-type: initial;
   --bs-table-color-state: initial;
@@ -193,7 +193,7 @@ table {
   --bs-table-hover-color: var(--bs-body-color);
   --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
   width: 100%;
-  margin-bottom: 1rem;
+
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
@@ -259,7 +259,7 @@ table {
   color: var(--bs-table-color);
   border-color: var(--bs-table-border-color);
 }
-.table-dark {
+.dark table.table {
   --bs-table-color: #fff;
   --bs-table-bg: #212529;
   --bs-table-border-color: #373b3e;

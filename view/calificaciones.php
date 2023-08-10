@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario'])) {
     die();
 }
 ?>
-<main class="h-full w-full flex flex-col bg-gray-100 px-4">
+<main class="h-full flex flex-col bg-gray-200 dark:bg-gray-800 mx-3 dark:text-white">
 
     <script>
         $(document).ready(function() {
@@ -15,10 +15,10 @@ if (!isset($_SESSION['usuario'])) {
 
     <div class=" flex justify-between my-4">
         <h1 class="text-2xl">Calificaciones y mensajes de tus clases</h1>
-        <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Mis calificaciones</span></span>
+        <span class="text-sm text-blue-900 dark:text-blue-600">Home / <span class="text-gray-600 dark:text-gray-400">Mis calificaciones</span></span>
     </div>
 
-    <div class="w-full bg-white rounded-md">
+    <div class="w-full bg-white dark:bg-gray-700 rounded-md shadow-md">
         <div class="relative flex justify-between items-center border-b p-2">
             <span class="block ">Calificaciones y mensajes de tus clases</span>
         </div>

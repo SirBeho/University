@@ -1,4 +1,4 @@
-<aside id="slidebar" class="bg-gray-sl dark:bg-gray-700 text-gray-100 border-gray-100 border-e w-60 toggle transform duration-300 ease-out">
+<aside id="slidebar" class="bg-gray-sl dark:bg-gray-700 text-gray-100 border-gray-100 border-e w-60 toggle transform duration-300 ease-out min-h-screen flex flex-col   ">
     <div class="flex items-center gap-2 h-12 px-4 py-2 border-b-[0.1px] ">
         <div class="w-6 h-6 rounded-full overflow-hidden  ">
             <img class=" max-w-[253%] m-[-50%-75%]" src="../pictures/logo.jpg" alt="">
@@ -68,7 +68,7 @@
                     <div class="h-5 w-5"><img src="../svg/classroom.svg" alt="" srcset=""></div>
                     <span class="hidden justify-between ">Mis Clases </span>
                 </a>
-                <img aria-controls="lista_clases" data-collapse-toggle="lista_clases" class="cursor-pointer bg-gray-sl ms-auto w-10 px-2 hover:bg-gray-500" src="../svg/arrow2.svg" alt="">
+                <img aria-controls="lista_clases" data-collapse-toggle="lista_clases" class="cursor-pointer bg-gray-sl dark:bg-gray-700 ms-auto w-10 px-2 dark:hover:bg-gray-500 hover:bg-gray-500" src="../svg/arrow2.svg" alt="">
 
             </li>
             <ul data-collapse-toggle="lista_clases" id="lista_clases" class="hidden bg-gray-500 ps-2 border-y overflow-hidden  border-y-gray-500">

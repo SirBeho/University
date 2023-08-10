@@ -9,7 +9,7 @@ if ($resultado) {
     if ($resultado->num_rows > 0) {
         while ($datos = $resultado->fetch_assoc()) {
 ?>
-            <div class="flex flex-col items-center w-60 bg-white rounded-md p-4 shadow-xl ">
+            <div class="flex flex-col items-center w-60 bg-white dark:bg-gray-700 rounded-md p-4 shadow-xl ">
                 <div class="w-full h-40 rounded-md overflow-hidden  bg-blue-200">
                     <img class="w-full h-full object-cover" src="../pictures/<?php echo is_file("../pictures/clase_" . $datos['ma_id']) ? "clase_" . $datos['ma_id'] : "school.svg" ?>" alt="">
                 </div>

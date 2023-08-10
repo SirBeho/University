@@ -1,7 +1,7 @@
 <?php include '../template/header.php'
 
 ?>
-<main class="h-full w-full flex flex-col bg-gray-100 px-4">
+<main class="h-full flex flex-col bg-gray-200 dark:bg-gray-800 mx-3 dark:text-white">
 
     <script>
         $(document).ready(function() {
@@ -13,7 +13,7 @@
         <!-- titulo -->
     <div class="relative flex justify-between my-4">
         <h1 class="text-2xl">Esquema de Clases</h1>
-        <span class="text-sm text-blue-900">Inicio / <span class="text-gray-600">Clases</span></span>
+        <span class="text-sm text-blue-900 dark:text-blue-600">Home / <span class="text-gray-600 dark:text-gray-400">Clases</span></span>
         <?php
             if (isset($_SESSION['error_message'])) {
                 echo '<p id="msj" class="text-red-500 w-full text-center absolute transform duration-500 ease-in-out bottom-8">' . $_SESSION['error_message'] . '</p>';
@@ -28,7 +28,7 @@
 
     <div class="flex gap-4">
        <!-- izquierd -->
-        <div class=" flex flex-col w-full bg-white rounded-md shadow-md">
+        <div class=" flex flex-col w-full bg-white dark:bg-gray-700 rounded-md shadow-md">
             <span class="flex border-b p-2">
                 Tus Materias Inscritas
             </span>
@@ -49,7 +49,7 @@
         </div>
         
 <!-- derecha -->
-        <div class="flex flex-col w-1/2 bg-white rounded-md shadow-md">
+        <div class="flex flex-col w-1/2 bg-white dark:bg-gray-700 rounded-md shadow-md">
             <span class="flex border-b p-2">
                 Materias para inscribir
             </span>

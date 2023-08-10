@@ -12,7 +12,7 @@
 
         <div class="flex items-center gap-4 mb-4">
                 <div class="h-10 w-10 overflow-hidden rounded-lg">
-                    <img id="imagemodal" class="w-full h-full object-cover" src="" alt="">
+                    <img id="imagemodal" class="w-full h-full object-cover" src="../pictures/usuario.jpg" alt="">
                 </div>
                 <span id="titulo"  class="text-xl font-medium text-gray-900 dark:text-white">Agregar Alumno</span>
             </div>

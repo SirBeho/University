@@ -16,29 +16,29 @@ include("../functions/etiquetas.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link href="../css/input.css" rel="stylesheet"> -->
-    <link href="../css/output.css" rel="stylesheet">
+ 
     <script src="../js/menu.js" defer></script>
     <script src="../js/funciones.js" defer></script>
-
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <link href="../DataTables/datatables.min.css" rel="stylesheet">
     <script src="../DataTables/datatables.min.js"></script>
 
+    <link href="../css/output.css" rel="stylesheet">
+    <link href="../css/table.css" rel="stylesheet">
+    <link href="../DataTables/datatables.min.css" rel="stylesheet">
 
 </head>
 
 <body>
-<button onclick="toggleDarkMode()" class="dark:bg-white bg-black rounded-full p-2 fixed bottom-4 left-4 z-10 w-8 h-8">
+    <button onclick="toggleDarkMode()" class="dark:bg-white bg-black rounded-full p-2 fixed bottom-4 left-4 z-10 w-8 h-8">
         <img src="../svg/dark.svg" class="block dark:hidden w-full h-full " alt="">
         <img src="../svg/light.svg" class="hidden dark:block w-full h-full m-0" alt="">
     </button>
     
-    <div class="flex h-screen w-screen dark:text-white">
+    <div class="flex h-full w-screen dark:text-white">
         <?php include_once '../template/Slidebar.php' ?>
-        <div class="flex flex-col w-full h-full ">
+        <div class="flex flex-col w-full h-full min-h-screen justify-between bg-gray-200 dark:bg-gray-800 ">
+            <div>
             <nav class="flex justify-between px-4 min-h-[3rem] bg-white dark:bg-gray-700 shadow-white border-white relative">
 
                 <div class=" flex gap-5 items-center ">
@@ -66,7 +66,7 @@ include("../functions/etiquetas.php");
 
                 <div id="menu" class="z-10 border border-gray-BD rounded-xl dark:bg-gray-700 p-2 w-36 bg-white text-xs absolute top-12 right-[1%] overflow-hidden h-0 opacity-0 transform duration-500 ease-in-out">
                     <div class="border-b">
-                        <a href="./profile.php" class="flex items-center gap-2 p-2 mb-2 hover:bg-gray-100 dark:hover:bg-gray-500  rounded-xl cursor-pointer">
+                        <a href="./profile.php" class="flex items-center gap-2 p-2 mb-2 hover:bg-gray-200 dark:hover:bg-gray-500  rounded-xl cursor-pointer">
                             <div class="w-6">
                                 <img src="../svg/profile.svg" alt="">
                             </div>
@@ -74,7 +74,7 @@ include("../functions/etiquetas.php");
                         </a>
                     </div>
 
-                    <a href="../controller/CUD_logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-100 rounded-xl text-red-500 cursor-pointer">
+                    <a href="../controller/CUD_logout.php" class="flex items-center gap-2 mt-2 p-2 hover:bg-gray-200 rounded-xl text-red-500 cursor-pointer">
                         <div class="w-6">
                             <img src="../svg/logout.svg" alt="">
                         </div>
