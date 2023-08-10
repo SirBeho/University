@@ -22,7 +22,7 @@
             ?>
         </div>
 
-        <form action="../controller/u_profile.php" enctype="multipart/form-data" id="maestroForm" method="post" class="space-y-6 relative p-4" action="#">
+        <form action="../controller/U_profile.php" enctype="multipart/form-data" id="maestroForm" method="post" class="space-y-6 relative p-4" action="#">
 
 
             <label class="w-fit flex gap-5 items-center cursor-pointer">

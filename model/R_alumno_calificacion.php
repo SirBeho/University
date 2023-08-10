@@ -27,7 +27,7 @@ if (!empty($_GET['id'])) {
 
                     <td><?php echo $datos['se_id']; ?></td>
                     <td><?php echo $datos['ma_nombre']; ?></td>
-                    <td><?php echo $datos['se_nota']; ?></td>
+                    <td><?php echo EtiquetaCalificaion($datos['se_nota']); ?></td>
                     <td><?php echo EtiquetaMensaje($datos['se_mensaje']) ?></td>
                     
                 </tr>

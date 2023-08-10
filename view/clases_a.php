@@ -57,9 +57,9 @@
             <div class="flex flex-col gap-2 m-4">
             <span class="font-bold ">Selecciona las Clases usa la tecla Ctrl</span>
 
-            <form action="../controller/CUD_register.php" id="inscribirForm" method="post" class=" flex flex-col" >
+            <form action="../controller/CUD_registro.php" id="inscribirForm" method="post" class=" flex flex-col" >
+                <input type="hidden" name="accion" value="create"> 
                 <div class="flex flex-col p-4 border rounded-md">
-
                     <?php include "../model/R_alumno_registro.php" ?>
                 </div>
                
@@ -96,6 +96,6 @@
 
 </main>
 
-<?php include  '../layout/modalRetirar.php' ?>
+
 <?php include  '../layout/modalDelete.php' ?>
 <?php include '../template/footer.php' ?>

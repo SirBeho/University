@@ -44,6 +44,12 @@ function EtiquetaMensaje($valor)
     :  '<span class="font-bold rounded h-fit px-1 bg-blue-500 text-white">No hay menaje</span>';
 }
 
+function EtiquetaCalificaion($valor)
+{
+    return $valor  ? '<span>'.$valor.'</span>'
+    :  '<span class="font-bold rounded h-fit px-1 bg-yellow-400 text-black">Sin calificacion</span>';
+}
+
 function EtiquetaProfesorAsignado($valor)
 {
     if ($valor == null || $valor == "") {

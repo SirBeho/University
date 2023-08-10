@@ -20,14 +20,13 @@ if (!empty($_GET['id'])) {
     if ($resultado) {
         if ($resultado->num_rows > 0) {
             while ($datos = $resultado->fetch_assoc()) {
-                $id = $datos['se_id'];
-                $nombre = $datos['ma_nombre'];
+
                 $eliminar = array(
-                    'controller' => "CUD_clase.php",
-                    'accion' => "delete",
-                    'query' => "DELETE FROM seleccion WHERE se_id = $id",
-                    'msj' =>  "Retirar $nombre"
-                );  
+                    'controller' => "CUD_registro.php",
+                    'id' => $datos['se_id'],
+                    'msj' =>  "Retirar " . $datos['ma_nombre']
+                );
+
     ?>
         <tr>
             <td><?php echo $datos['se_id']; ?></td>

@@ -16,7 +16,7 @@ if (!empty($_GET['id'])) {
 } else {
     
     $id_alum = $_SESSION['usuario']['us_id'];
-    $resultado = $mysqli->query("select * from materia LEFT join seleccion ON se_materia = ma_id WHERE ma_id not in (SELECT se_materia FROM seleccion WHERE se_alumno = '$id_alum') ");
+    $resultado = $mysqli->query("select * from materia LEFT join seleccion ON se_materia = ma_id WHERE ma_id not in (SELECT se_materia FROM seleccion WHERE se_alumno = '$id_alum') GROUP by ma_id ");
 
 
     if ($resultado) {

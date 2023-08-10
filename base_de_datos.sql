@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `vista_profesor_materia` (
 DROP TABLE IF EXISTS `vista_materia_calificacion`;
 
 DROP VIEW IF EXISTS `vista_materia_calificacion`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_materia_calificacion`  AS SELECT `seleccion`.`se_id` AS `se_id`, `seleccion`.`se_alumno` AS `se_alumno`, concat(`usuario`.`us_name`,' ',`usuario`.`us_lastname`) AS `us_name`, `seleccion`.`se_materia` AS `se_materia`, `materia`.`ma_nombre` AS `ma_nombre`, `seleccion`.`se_nota` AS `se_nota`, `seleccion`.`se_mensaje` AS `se_mensaje` FROM ((`seleccion` left join `usuario` on((`seleccion`.`se_alumno` = `usuario`.`us_id`))) left join `materia` on((`seleccion`.`se_materia` = `materia`.`ma_id`)))  ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vista_materia_calificacion`  AS SELECT `seleccion`.`se_id` AS `se_id`, `seleccion`.`se_alumno` AS `se_alumno`, concat(`usuario`.`us_name`,' ',`usuario`.`us_lastname`) AS `us_name`, `seleccion`.`se_materia` AS `se_materia`, `materia`.`ma_nombre` AS `ma_nombre`, `seleccion`.`se_nota` AS `se_nota`, `seleccion`.`se_mensaje` AS `se_mensaje` FROM ((`seleccion` left join `usuario` on((`seleccion`.`se_alumno` = `usuario`.`us_id`))) left join `materia` on((`seleccion`.`se_materia` = `materia`.`ma_id`)))  ;
 
 -- --------------------------------------------------------
 
@@ -203,7 +203,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vista_materia_profe_alumno`;
 
 DROP VIEW IF EXISTS `vista_materia_profe_alumno`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_materia_profe_alumno`  AS SELECT `m`.`ma_id` AS `ma_id`, `m`.`ma_nombre` AS `ma_nombre`, `m`.`ma_profesor` AS `ma_profesor_id`, concat(`u`.`us_name`,' ',`u`.`us_lastname`) AS `us_name`, count(`s`.`se_materia`) AS `cantidad` FROM ((`materia` `m` left join `seleccion` `s` on((`m`.`ma_id` = `s`.`se_materia`))) left join `usuario` `u` on((`m`.`ma_profesor` = `u`.`us_id`))) GROUP BY `m`.`ma_id``ma_id`  ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vista_materia_profe_alumno`  AS SELECT `m`.`ma_id` AS `ma_id`, `m`.`ma_nombre` AS `ma_nombre`, `m`.`ma_profesor` AS `ma_profesor_id`, concat(`u`.`us_name`,' ',`u`.`us_lastname`) AS `us_name`, count(`s`.`se_materia`) AS `cantidad` FROM ((`materia` `m` left join `seleccion` `s` on((`m`.`ma_id` = `s`.`se_materia`))) left join `usuario` `u` on((`m`.`ma_profesor` = `u`.`us_id`))) GROUP BY `m`.`ma_id`  ;
 
 -- --------------------------------------------------------
 
@@ -213,7 +213,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `vista_profesor_materia`;
 
 DROP VIEW IF EXISTS `vista_profesor_materia`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_profesor_materia`  AS SELECT `usuario`.`us_id` AS `us_id`, `usuario`.`us_name` AS `us_name`, `usuario`.`us_email` AS `us_email`, `usuario`.`us_addres` AS `us_addres`, `usuario`.`us_birth` AS `us_birth`, group_concat(`materia`.`ma_nombre` separator ', ') AS `materias`, group_concat(`materia`.`ma_id` separator ', ') AS `materia_id` FROM (`usuario` left join `materia` on((`materia`.`ma_profesor` = `usuario`.`us_id`))) WHERE (`usuario`.`us_permiso` = 2) GROUP BY `usuario`.`us_id``us_id`  ;
+CREATE ALGORITHM=UNDEFINED  SQL SECURITY DEFINER VIEW `vista_profesor_materia`  AS SELECT `usuario`.`us_id` AS `us_id`, `usuario`.`us_name` AS `us_name`, `usuario`.`us_email` AS `us_email`, `usuario`.`us_addres` AS `us_addres`, `usuario`.`us_birth` AS `us_birth`, group_concat(`materia`.`ma_nombre` separator ', ') AS `materias`, group_concat(`materia`.`ma_id` separator ', ') AS `materia_id` FROM (`usuario` left join `materia` on((`materia`.`ma_profesor` = `usuario`.`us_id`))) WHERE (`usuario`.`us_permiso` = 2) GROUP BY `usuario`.`us_id`  ;
 
 --
 -- Restricciones para tablas volcadas
@@ -232,7 +232,3 @@ ALTER TABLE `seleccion`
   ADD CONSTRAINT `seleccion_materia_idmateria` FOREIGN KEY (`se_materia`) REFERENCES `materia` (`ma_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `seleccion_usuario_id_alumno` FOREIGN KEY (`se_alumno`) REFERENCES `usuario` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

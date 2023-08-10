@@ -26,7 +26,7 @@ if (!empty($_GET['id'])) {
 
                     <td><?php echo $datos['se_id']; ?></td>
                     <td><?php echo $datos['us_name']; ?></td>
-                    <td><?php echo $datos['se_nota']; ?></td>
+                    <td><?php echo EtiquetaCalificaion($datos['se_nota']); ?></td>
                     <td><?php echo EtiquetaMensaje($datos['se_mensaje']) ?></td>
                     <td>
                         <img onclick="EditarCalificacion(<?php echo $datos['se_id']; ?>)" data-modal-target="calificacion-modal" data-modal-toggle="calificacion-modal" class="cursor-pointer" src="../svg/edit.svg" alt="">
