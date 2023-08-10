@@ -1,12 +1,8 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     require("./connection.php");
     extract($_POST);
-    var_dump($_POST);
-
-
     if ($accion == "create") {
         try {
             $query = "INSERT INTO materia (ma_nombre, ma_profesor) VALUES ('$name','$profesor')";

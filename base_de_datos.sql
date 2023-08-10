@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-08-2023 a las 21:54:09
+-- Tiempo de generación: 10-08-2023 a las 01:37:25
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.2.0
 
@@ -30,49 +30,27 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `materia`;
 CREATE TABLE IF NOT EXISTS `materia` (
   `ma_id` int NOT NULL AUTO_INCREMENT,
-  `ma_nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `ma_nombre` varchar(50)  NOT NULL,
   `ma_profesor` int DEFAULT NULL,
   PRIMARY KEY (`ma_id`),
-  KEY `cl_profesor` (`ma_profesor`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `materia_usuario_idprofesor` (`ma_profesor`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `materia`
 --
 
 INSERT INTO `materia` (`ma_id`, `ma_nombre`, `ma_profesor`) VALUES
-(1, 'Matemáticas', 3),
-(2, 'Historia', NULL),
-(3, 'Ciencias Naturales', 3),
-(4, 'Literatura', NULL),
-(5, 'Educación Física 2', 2),
-(6, 'Arte', 2),
-(7, 'Geografía', 3),
-(8, 'Inglés', 2),
-(9, 'Informática', 3),
-(10, 'Economía', NULL);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permisos`
---
-
-DROP TABLE IF EXISTS `permisos`;
-CREATE TABLE IF NOT EXISTS `permisos` (
-  `pe_id` int NOT NULL AUTO_INCREMENT,
-  `pe_descripcion` varchar(20) NOT NULL,
-  PRIMARY KEY (`pe_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Volcado de datos para la tabla `permisos`
---
-
-INSERT INTO `permisos` (`pe_id`, `pe_descripcion`) VALUES
-(1, 'Administrador'),
-(2, 'Maestro'),
-(3, 'Alumno');
+(1, 'Programación en Python', 2),
+(2, 'Bases de Datos', 3),
+(3, 'Desarrollo Web', 4),
+(4, 'Seguridad Informática', 2),
+(5, 'Redes de Computadoras', 4),
+(6, 'Matemáticas Avanzadas', NULL),
+(7, 'Historia del Arte', NULL),
+(8, 'Inteligencia Artificial', 2),
+(9, 'Diseño de Interfaces', 2),
+(10, 'Sistemas Operativos', 4);
 
 -- --------------------------------------------------------
 
@@ -85,21 +63,38 @@ CREATE TABLE IF NOT EXISTS `seleccion` (
   `se_id` int NOT NULL AUTO_INCREMENT,
   `se_alumno` int NOT NULL,
   `se_materia` int NOT NULL,
-  `se_nota` int NOT NULL,
-  `se_mensaje` text NOT NULL,
+  `se_nota` int DEFAULT NULL,
+  `se_mensaje` text ,
   PRIMARY KEY (`se_id`),
-  KEY `se_alumno` (`se_alumno`),
-  KEY `se_materia` (`se_materia`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `seleccion_materia_idmateria` (`se_materia`),
+  KEY `seleccion_usuario_id_alumno` (`se_alumno`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 ;
 
 --
 -- Volcado de datos para la tabla `seleccion`
 --
 
 INSERT INTO `seleccion` (`se_id`, `se_alumno`, `se_materia`, `se_nota`, `se_mensaje`) VALUES
-(1, 5, 5, 0, ''),
-(2, 5, 10, 0, ''),
-(3, 6, 5, 0, '');
+(52, 5, 1, 87, 'Bien hecho en la asignatura de Python.'),
+(53, 6, 2, 72, 'Sigue estudiando las bases de datos.'),
+(54, 7, 3, 0, ''),
+(55, 8, 4, 80, 'Buen enfoque en seguridad informática.'),
+(56, 9, 5, 0, 'Participación baja en clase.'),
+(57, 10, 5, 88, ''),
+(58, 5, 7, 0, ' La nota se encuentra pendiente.'),
+(59, 6, 8, 75, 'Interesante proyecto de inteligencia artificial.'),
+(60, 7, 5, 82, 'Buenas mejoras en el diseño de interfaces.'),
+(61, 8, 10, 0, 'Comprende bien los sistemas operativos. La nota se está evaluando.'),
+(62, 5, 3, 78, 'Progreso constante en la materia.'),
+(63, 6, 5, 0, ''),
+(64, 7, 8, 96, 'Muestra un gran dominio del desarrollo web.'),
+(65, 8, 7, 0, 'Rechazado. El enfoque en historia del arte no cumple con los requisitos.'),
+(66, 9, 8, 0, 'Sigue refinando tus diseños de interfaces.'),
+(67, 10, 3, 91, 'Excelente trabajo en el proyecto de IA.'),
+(68, 6, 10, 0, 'Baja comprensión de los sistemas operativos. La nota está pendiente.'),
+(69, 6, 1, 75, 'Estás progresando en programación.'),
+(70, 7, 2, 0, ''),
+(71, 10, 3, 86, 'Buena presentación en seguridad informática.');
 
 -- --------------------------------------------------------
 
@@ -110,30 +105,50 @@ INSERT INTO `seleccion` (`se_id`, `se_alumno`, `se_materia`, `se_nota`, `se_mens
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `us_id` int NOT NULL AUTO_INCREMENT,
-  `us_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `us_lastname` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `us_name` varchar(20)  NOT NULL,
+  `us_lastname` varchar(20)  NOT NULL,
   `us_dni` varchar(11) NOT NULL,
   `us_addres` varchar(50) NOT NULL,
   `us_birth` date NOT NULL,
-  `us_email` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `us_email` varchar(25)  NOT NULL,
   `us_password` varchar(80) NOT NULL,
   `us_permiso` int NOT NULL,
   `us_status` bit(1) NOT NULL,
-  PRIMARY KEY (`us_id`),
-  KEY `us_permiso` (`us_permiso`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`us_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`us_id`, `us_name`, `us_lastname`, `us_dni`, `us_addres`, `us_birth`, `us_email`, `us_password`, `us_permiso`, `us_status`) VALUES
-(1, 'Benjamin', 'Tavarez', '40211570867', 'c/ 23 #13 Los prados', '1998-03-13', 'benjamin@gmail.com', 'admin', 1, b'1'),
-(2, 'Harold', 'Carazas', '541287451', 'Av. Circunvalacion #100 cala 81', '2000-08-09', 'harold@gmail.com', 'admin', 2, b'1'),
-(3, 'Robienson', 'Martinez', '5463213', 'al lado de la mia', '2023-08-14', 'robinson@gmail.com', 'admin', 2, b'1'),
-(4, 'pedro', 'Gutierrez', '63456942', 'arriva de la mia', '2023-08-04', 'pedro@gmail.com', 'admin', 2, b'1'),
-(5, 'Brayan', 'Gutierrez', '6543213', 'Calle penetracion km 15', '2023-08-01', 'brayan@gmail.com', 'admin', 3, b'1'),
-(6, 'kenin', 'egass', '65498765', 'bellin colorado 515', '2013-08-06', 'kevin@gmail.com', 'admin', 3, b'1');
+(1, 'Admin', 'Administrator', '1234567890', 'Calle Admin #1', '1990-01-01', 'admin@gmail.com', '$2y$10$f1mCuYBi4cfWpq7xSrETIeUjz482RNlqX1/K4Ww0KDPTtBFiT4SnC', 1, b'1'),
+(2, 'John', 'Doe', '9876543210', 'Calle Profesor #1', '1975-01-15', 'profesor1@gmail.com', 'hashedpassword', 2, b'1'),
+(3, 'Jane', 'Smith', '5678901234', 'Avenida Profesor #2', '1980-05-20', 'profesor2@gmail.com', 'hashedpassword', 2, b'1'),
+(4, 'Michael', 'Johnson', '3456789012', 'Calle Docente #3', '1978-09-25', 'profesor3@gmail.com', 'hashedpassword', 2, b'1'),
+(5, 'Alice', 'Williams', '7890123456', 'Calle Alumno #4', '2002-03-05', 'alumno1@gmail.com', 'hashedpassword', 3, b'1'),
+(6, 'Robert', 'Brown', '9012345678', 'Avenida Estudiante #5', '2001-08-10', 'alumno2@gmail.com', 'hashedpassword', 3, b'1'),
+(7, 'Linda', 'Davis', '2345678901', 'Calle Estudiante #6', '2003-12-15', 'alumno3@gmail.com', 'hashedpassword', 3, b'1'),
+(8, 'Daniel', 'Miller', '4567890123', 'Avenida Estudiante #7', '2000-06-20', 'alumno4@gmail.com', 'hashedpassword', 3, b'1'),
+(9, 'Emily', 'Jones', '6789012345', 'Calle Estudiante #8', '2002-10-25', 'alumno5@gmail.com', 'hashedpassword', 3, b'1'),
+(10, 'William', 'Wilson', '8901234567', 'Avenida Estudiante #9', '2001-04-30', 'alumno6@gmail.com', 'hashedpassword', 3, b'1');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `vista_materia_calificacion`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `vista_materia_calificacion`;
+CREATE TABLE IF NOT EXISTS `vista_materia_calificacion` (
+`se_id` int
+,`se_alumno` int
+,`us_name` varchar(41)
+,`se_materia` int
+,`ma_nombre` varchar(50)
+,`se_nota` int
+,`se_mensaje` text
+);
 
 -- --------------------------------------------------------
 
@@ -170,6 +185,16 @@ CREATE TABLE IF NOT EXISTS `vista_profesor_materia` (
 -- --------------------------------------------------------
 
 --
+-- Estructura para la vista `vista_materia_calificacion`
+--
+DROP TABLE IF EXISTS `vista_materia_calificacion`;
+
+DROP VIEW IF EXISTS `vista_materia_calificacion`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vista_materia_calificacion`  AS SELECT `seleccion`.`se_id` AS `se_id`, `seleccion`.`se_alumno` AS `se_alumno`, concat(`usuario`.`us_name`,' ',`usuario`.`us_lastname`) AS `us_name`, `seleccion`.`se_materia` AS `se_materia`, `materia`.`ma_nombre` AS `ma_nombre`, `seleccion`.`se_nota` AS `se_nota`, `seleccion`.`se_mensaje` AS `se_mensaje` FROM ((`seleccion` left join `usuario` on((`seleccion`.`se_alumno` = `usuario`.`us_id`))) left join `materia` on((`seleccion`.`se_materia` = `materia`.`ma_id`)))  ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura para la vista `vista_materia_profe_alumno`
 --
 DROP TABLE IF EXISTS `vista_materia_profe_alumno`;
@@ -192,17 +217,17 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 
 --
+-- Filtros para la tabla `materia`
+--
+ALTER TABLE `materia`
+  ADD CONSTRAINT `materia_usuario_idprofesor` FOREIGN KEY (`ma_profesor`) REFERENCES `usuario` (`us_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `seleccion`
 --
 ALTER TABLE `seleccion`
-  ADD CONSTRAINT `seleccion_ibfk_1` FOREIGN KEY (`se_alumno`) REFERENCES `usuario` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `seleccion_ibfk_2` FOREIGN KEY (`se_materia`) REFERENCES `materia` (`ma_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`us_permiso`) REFERENCES `permisos` (`pe_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `seleccion_materia_idmateria` FOREIGN KEY (`se_materia`) REFERENCES `materia` (`ma_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `seleccion_usuario_id_alumno` FOREIGN KEY (`se_alumno`) REFERENCES `usuario` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
