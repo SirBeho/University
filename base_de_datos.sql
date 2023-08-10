@@ -24,6 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `us_id` int NOT NULL AUTO_INCREMENT,
+  `us_name` varchar(20)  NOT NULL,
+  `us_lastname` varchar(20)  NOT NULL,
+  `us_dni` varchar(11) NOT NULL,
+  `us_addres` varchar(50) NOT NULL,
+  `us_birth` date NOT NULL,
+  `us_email` varchar(25)  NOT NULL,
+  `us_password` varchar(80) NOT NULL,
+  `us_permiso` int NOT NULL,
+  `us_status` bit(1) NOT NULL,
+  PRIMARY KEY (`us_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 ;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`us_id`, `us_name`, `us_lastname`, `us_dni`, `us_addres`, `us_birth`, `us_email`, `us_password`, `us_permiso`, `us_status`) VALUES
+(1, 'Admin', 'Administrator', '1234567890', 'Calle Admin #1', '1990-01-01', 'admin@gmail.com', '$2y$10$f1mCuYBi4cfWpq7xSrETIeUjz482RNlqX1/K4Ww0KDPTtBFiT4SnC', 1, b'1'),
+(2, 'John', 'Doe', '9876543210', 'Calle Profesor #1', '1975-01-15', 'profesor1@gmail.com', 'hashedpassword', 2, b'1'),
+(3, 'Jane', 'Smith', '5678901234', 'Avenida Profesor #2', '1980-05-20', 'profesor2@gmail.com', 'hashedpassword', 2, b'1'),
+(4, 'Michael', 'Johnson', '3456789012', 'Calle Docente #3', '1978-09-25', 'profesor3@gmail.com', 'hashedpassword', 2, b'1'),
+(5, 'Alice', 'Williams', '7890123456', 'Calle Alumno #4', '2002-03-05', 'alumno1@gmail.com', 'hashedpassword', 3, b'1'),
+(6, 'Robert', 'Brown', '9012345678', 'Avenida Estudiante #5', '2001-08-10', 'alumno2@gmail.com', 'hashedpassword', 3, b'1'),
+(7, 'Linda', 'Davis', '2345678901', 'Calle Estudiante #6', '2003-12-15', 'alumno3@gmail.com', 'hashedpassword', 3, b'1'),
+(8, 'Daniel', 'Miller', '4567890123', 'Avenida Estudiante #7', '2000-06-20', 'alumno4@gmail.com', 'hashedpassword', 3, b'1'),
+(9, 'Emily', 'Jones', '6789012345', 'Calle Estudiante #8', '2002-10-25', 'alumno5@gmail.com', 'hashedpassword', 3, b'1'),
+(10, 'William', 'Wilson', '8901234567', 'Avenida Estudiante #9', '2001-04-30', 'alumno6@gmail.com', 'hashedpassword', 3, b'1');
+
+
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `materia`
 --
 
@@ -96,42 +135,6 @@ INSERT INTO `seleccion` (`se_id`, `se_alumno`, `se_materia`, `se_nota`, `se_mens
 (70, 7, 2, 0, ''),
 (71, 10, 3, 86, 'Buena presentación en seguridad informática.');
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `us_id` int NOT NULL AUTO_INCREMENT,
-  `us_name` varchar(20)  NOT NULL,
-  `us_lastname` varchar(20)  NOT NULL,
-  `us_dni` varchar(11) NOT NULL,
-  `us_addres` varchar(50) NOT NULL,
-  `us_birth` date NOT NULL,
-  `us_email` varchar(25)  NOT NULL,
-  `us_password` varchar(80) NOT NULL,
-  `us_permiso` int NOT NULL,
-  `us_status` bit(1) NOT NULL,
-  PRIMARY KEY (`us_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 ;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`us_id`, `us_name`, `us_lastname`, `us_dni`, `us_addres`, `us_birth`, `us_email`, `us_password`, `us_permiso`, `us_status`) VALUES
-(1, 'Admin', 'Administrator', '1234567890', 'Calle Admin #1', '1990-01-01', 'admin@gmail.com', '$2y$10$f1mCuYBi4cfWpq7xSrETIeUjz482RNlqX1/K4Ww0KDPTtBFiT4SnC', 1, b'1'),
-(2, 'John', 'Doe', '9876543210', 'Calle Profesor #1', '1975-01-15', 'profesor1@gmail.com', 'hashedpassword', 2, b'1'),
-(3, 'Jane', 'Smith', '5678901234', 'Avenida Profesor #2', '1980-05-20', 'profesor2@gmail.com', 'hashedpassword', 2, b'1'),
-(4, 'Michael', 'Johnson', '3456789012', 'Calle Docente #3', '1978-09-25', 'profesor3@gmail.com', 'hashedpassword', 2, b'1'),
-(5, 'Alice', 'Williams', '7890123456', 'Calle Alumno #4', '2002-03-05', 'alumno1@gmail.com', 'hashedpassword', 3, b'1'),
-(6, 'Robert', 'Brown', '9012345678', 'Avenida Estudiante #5', '2001-08-10', 'alumno2@gmail.com', 'hashedpassword', 3, b'1'),
-(7, 'Linda', 'Davis', '2345678901', 'Calle Estudiante #6', '2003-12-15', 'alumno3@gmail.com', 'hashedpassword', 3, b'1'),
-(8, 'Daniel', 'Miller', '4567890123', 'Avenida Estudiante #7', '2000-06-20', 'alumno4@gmail.com', 'hashedpassword', 3, b'1'),
-(9, 'Emily', 'Jones', '6789012345', 'Calle Estudiante #8', '2002-10-25', 'alumno5@gmail.com', 'hashedpassword', 3, b'1'),
-(10, 'William', 'Wilson', '8901234567', 'Avenida Estudiante #9', '2001-04-30', 'alumno6@gmail.com', 'hashedpassword', 3, b'1');
 
 -- --------------------------------------------------------
 

@@ -11,16 +11,16 @@ Este sistema se presenta como una herramienta completa para la gestión educativ
 ## Datos de Acceso
 
 ### Administrador
-- Correo electrónico: benjamin@gmail.com
-- Contraseña: universidadasd
+- Correo electrónico: admin@gmail.com
+- Contraseña: admin
 
 ### Maestro
-- Correo electrónico: robinson@gmail.com
-- Contraseña: universidadasd
+- Correo electrónico: profesor1@gmail.com
+- Contraseña: (cualquiera en el primer intento)
 
 ### Alumno
-- Correo electrónico: kevin@gmail.com
-- Contraseña: universidadasd
+- Correo electrónico: alumno1@gmail.com
+- Contraseña: (cualquiera en el primer intento)
 
 ## Características
 

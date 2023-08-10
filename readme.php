@@ -85,18 +85,18 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-2">
                     <div class="bg-white p-4 shadow rounded">
                         <h4 class="text-md font-semibold mb-2">Administrador</h4>
-                        <p><strong>Correo electrónico:</strong> benjamin@gmail.com</p>
-                        <p><strong>Contraseña:</strong> universidadasd</p>
+                        <p><strong>Correo electrónico:</strong> admin@gmail.com</p>
+                        <p><strong>Contraseña:</strong> admin</p>
                     </div>
                     <div class="bg-white p-4 shadow rounded">
                         <h4 class="text-md font-semibold mb-2">Maestro</h4>
-                        <p><strong>Correo electrónico:</strong> robinson@gmail.com</p>
-                        <p><strong>Contraseña:</strong> universidadasd</p>
+                        <p><strong>Correo electrónico:</strong> profesor1@gmail.com</p>
+                        <p><strong>Contraseña:</strong> (cualquiera en el primer intento)</p>
                     </div>
                     <div class="bg-white p-4 shadow rounded">
                         <h4 class="text-md font-semibold mb-2">Alumno</h4>
-                        <p><strong>Correo electrónico:</strong> kevin@gmail.com</p>
-                        <p><strong>Contraseña:</strong> universidadasd</p>
+                        <p><strong>Correo electrónico:</strong> alumno1@gmail.com</p>
+                        <p><strong>Contraseña:</strong> (cualquiera en el primer intento)</p>
                     </div>
                 </div>
 
