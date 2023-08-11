@@ -13,4 +13,22 @@ function Error_File($error_code) {
 }
 
 
+function Error_SQL(mysqli_sql_exception $e) {
+    $errorCode = $e->getCode();
+    $errorMessage = $e->getMessage();
+
+    switch ($errorCode) {
+        case 1062:
+            if (preg_match("/Duplicate entry '(.*?)' for key/", $errorMessage, $matches)) {
+                return "Error: Entrada duplicada de dato: " . $matches[1];
+            }
+            return "Error: Entrada duplicada de dato";
+        case 1048:
+            return "Error: Todos los datos deben llenarse";
+        default:
+            return "Error en la accion realizada";
+    }
+}
+
+
 ?>

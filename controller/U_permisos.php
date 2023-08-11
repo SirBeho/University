@@ -1,9 +1,14 @@
 <?php
 
 
+include '../functions/error.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
-    extract($_POST);
+    foreach ($_POST as $key => $value) {
+    $_POST[$key] = trim($value);
+    }
+extract($_POST);
 
     require("./connection.php");
 

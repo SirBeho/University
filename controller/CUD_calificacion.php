@@ -1,8 +1,11 @@
 <?php
 
 
+include '../functions/error.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
+
     extract($_POST);
     $id_m = $_SESSION['id_mat'];
    require("./connection.php");

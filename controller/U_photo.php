@@ -4,6 +4,7 @@ include '../functions/error.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require("connection.php");
     session_start();
+   
     extract($_POST);
     $id_m = $_SESSION['id_mat'];
    

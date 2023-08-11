@@ -137,7 +137,7 @@ function EditarMaestros(id, m_id, m_nombre,img) {
         modal.name.value = userData.data.us_name;
         modal.lastname.value = userData.data.us_lastname;
         modal.addres.value = userData.data.us_addres;
-        modal.born.value = userData.data.us_birth;
+        modal.birth.value = userData.data.us_birth;
         
         const materiasContainer = document.getElementById("materias");
         let labels = "";
@@ -263,6 +263,7 @@ function Eliminar(data) {
   formulario.action = "../controller/" + data.controller; 
   formulario.accion.value = "delete"; 
   formulario.id.value = data.id; 
+  formulario.boton.textContent = data.msj.split(" ")[0].toUpperCase();
   document.getElementById("mensaje").textContent = data.msj;
              
 }; 
